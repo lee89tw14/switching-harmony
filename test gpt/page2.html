@@ -65,11 +65,65 @@
 
         <!-- 上/下一頁按鈕 -->
         <div class="page-nav">
-            <button id="prevPageBtn" disabled>← 上一頁</button>
+            <button id="prevPageBtn">← 上一頁</button>
             <button id="nextPageBtn">下一頁 →</button>
         </div>
     </div>
 
+    <!-- 放大圖片 Overlay -->
+    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
+        <!-- 增加關閉按鈕 -->
+            <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
+            <img id="overlayImage" src="" alt="放大圖片">
+    </div>
+
+    <!-- js script -->
     <script src="js/script.js"></script>
+    <script>
+        var currentPage = 2; 
+        var totalPages = 20;
+        var prevPageBtn = document.getElementById('prevPageBtn');
+        var nextPageBtn = document.getElementById('nextPageBtn');
+
+        function updatePageNavButtons() {
+            if (currentPage <= 1) {
+                prevPageBtn.disabled = true;
+            } else {
+                prevPageBtn.disabled = false;
+            }
+
+            if (currentPage >= totalPages) {
+                nextPageBtn.disabled = true;
+            } else {
+                nextPageBtn.disabled = false;
+            }
+        }
+
+        updatePageNavButtons();
+
+        prevPageBtn.addEventListener('click', function() {
+            if (currentPage > 1) {
+                window.location.href = 'page' + (currentPage - 1) + '.html';
+            }
+        });
+
+        nextPageBtn.addEventListener('click', function() {
+            if (currentPage < totalPages) {
+                window.location.href = 'page' + (currentPage + 1) + '.html';
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                if (currentPage > 1) {
+                    window.location.href = 'page' + (currentPage - 1) + '.html';
+                }
+            } else if (event.key === 'ArrowRight') {
+                if (currentPage < totalPages) {
+                    window.location.href = 'page' + (currentPage + 1) + '.html';
+                }
+            }
+        }); 
+    </script>
 </body>
 </html>
