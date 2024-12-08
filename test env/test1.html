@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>整合範例網頁</title>
+    <link rel="stylesheet" href="css/test.css">
+</head>
+<body>
+    <!-- 導覽列切換按鈕 (在小螢幕可使用) -->
+    <button class="nav-toggle" id="navToggleBtn">☰</button>
+
+    <!-- 導覽列 -->
+    <nav id="mainNav" class="show">
+        <ul>
+            <li><a href="page1.html">頁面1</a></li>
+            <li><a href="page2.html">頁面2</a></li>
+            <li><a href="page3.html">頁面3</a></li>
+            <!-- 依需求增加至 page20.html -->
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+        <h1>整合範例網頁</h1>
+        <p>此範例示範結合先前模板的功能，包括導覽列顯示/隱藏、中央置中內容、可切換的圖片 Slider，以及並排圖片展示。</p>
+
+        <!-- 上/下一頁按鈕 -->
+        <div class="page-nav">
+            <button id="prevPageBtn" disabled>← 上一頁</button>
+            <button id="nextPageBtn">下一頁 →</button>
+        </div>
+
+        <!-- 圖片 Slider (源自 Template 1) -->
+        <div class="slider-container">
+            <div class="slide-wrapper" id="slideWrapper">
+                <div class="slide">
+                    <img src="images/image1.jpg" alt="圖片1描述">
+                    <div class="description">圖片1的描述文字</div>
+                </div>
+                <div class="slide">
+                    <img src="images/image2.jpg" alt="圖片2描述">
+                    <div class="description">圖片2的描述文字</div>
+                </div>
+                <div class="slide">
+                    <img src="images/image3.jpg" alt="圖片3描述">
+                    <div class="description">圖片3的描述文字</div>
+                </div>
+            </div>
+            <div class="prev" onclick="prevSlide()">&lt;</div>
+            <div class="next" onclick="nextSlide()">&gt;</div>
+        </div>
+
+        <!-- 並排圖片展示 (源自 Template 2) -->
+        <div class="image-gallery">
+            <div class="image-item">
+                <img src="images/image1.jpg">
+                <div class="image-caption">圖片1描述文字</div>
+            </div>
+            <div class="image-item">
+                <img src="images/image2.jpg">
+                <div class="image-caption">圖片2描述文字</div>
+            </div>
+            <div class="image-item">
+                <img src="images/image3.jpg">
+                <div class="image-caption">圖片3描述文字</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/test.js"></script>
+</body>
+</html>

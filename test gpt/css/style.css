@@ -1,0 +1,208 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow: hidden; /* 禁止捲動 */
+}
+
+/* Header: 導覽列靠右對齊 */
+.header {
+    position: relative;
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end; /* 導覽列靠右對齊 */
+    align-items: center;
+}
+
+#mainNav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px; /* li 之間的空隙 */
+}
+#mainNav ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+}
+#mainNav ul li a i {
+    margin-right: 5px;
+}
+
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: calc(100vh - 60px); 
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+h1, p {
+    margin: 10px 0;
+}
+
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    width: 300px;
+}
+
+.page-nav button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.page-nav button:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+/* Slider 區域 */
+.slider-container {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.slide-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.description {
+    background: #f4f4f4;
+    padding: 10px;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    line-height: 30px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    user-select: none;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+
+/* 並排圖片區域 */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.image-item {
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+.image-item img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+.image-caption {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+/* overlay樣式 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9999;
+}
+
+.overlay.show {
+    opacity: 1; 
+    visibility: visible;
+}
+
+.overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    cursor: zoom-out;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.close-button:hover {
+    background: rgba(0,0,0,0.7);
+}

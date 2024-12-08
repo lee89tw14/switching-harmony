@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <title>初志貫徹NE　〜スイッチングハーモニーを奏でよう〜</title>
+    <link rel="stylesheet" type="text/css" href="css/style2.css" />    
+</head>
+<body>
+    <!-- 導覽列 -->
+    <nav>
+        <ul>
+            <li><a href="page1.html">頁面1</a></li>
+            <li><a href="page2.html">頁面2</a></li>
+            <li><a href="page3.html">頁面3</a></li>
+            <!-- ... 繼續列出至 page20.html -->
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>範例網頁 Template 1</h1>
+        <p>此為最初版本的圖片顯示方式及上下頁切換。</p>
+
+        <!-- 上/下一頁按鈕示範 -->
+        <div class="page-nav">
+            <button id="prevPageBtn" disabled>← 上一頁</button>
+            <button id="nextPageBtn">下一頁 →</button>
+        </div>
+
+        <!-- 圖片 Slider -->
+        <div class="slider-container">
+            <div class="slide-wrapper" id="slideWrapper">
+                <div class="slide">
+                    <img src="image1.jpg" alt="圖片1描述">
+                    <div class="description">圖片1的描述文字</div>
+                </div>
+                <div class="slide">
+                    <img src="image2.jpg" alt="圖片2描述">
+                    <div class="description">圖片2的描述文字</div>
+                </div>
+                <div class="slide">
+                    <img src="image3.jpg" alt="圖片3描述">
+                    <div class="description">圖片3的描述文字</div>
+                </div>
+            </div>
+
+            <div class="prev" onclick="prevSlide()">&lt;</div>
+            <div class="next" onclick="nextSlide()">&gt;</div>
+        </div>
+    </div>
+
+    <script>
+        var currentPage = 1;
+        var totalPages = 20;
+
+        var prevPageBtn = document.getElementById('prevPageBtn');
+        var nextPageBtn = document.getElementById('nextPageBtn');
+
+        function updatePageNavButtons() {
+            if (currentPage <= 1) {
+                prevPageBtn.disabled = true;
+            } else {
+                prevPageBtn.disabled = false;
+            }
+
+            if (currentPage >= totalPages) {
+                nextPageBtn.disabled = true;
+            } else {
+                nextPageBtn.disabled = false;
+            }
+        }
+
+        updatePageNavButtons();
+
+        prevPageBtn.addEventListener('click', function() {
+            if (currentPage > 1) {
+                window.location.href = 'page' + (currentPage - 1) + '.html';
+            }
+        });
+
+        nextPageBtn.addEventListener('click', function() {
+            if (currentPage < totalPages) {
+                window.location.href = 'page' + (currentPage + 1) + '.html';
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                if (currentPage > 1) {
+                    window.location.href = 'page' + (currentPage - 1) + '.html';
+                }
+            } else if (event.key === 'ArrowRight') {
+                if (currentPage < totalPages) {
+                    window.location.href = 'page' + (currentPage + 1) + '.html';
+                }
+            }
+        });
+
+        // Slider相關程式碼
+        var slideIndex = 0;
+        var slides = document.getElementsByClassName("slide");
+        var slideWrapper = document.getElementById("slideWrapper");
+        var totalSlides = slides.length;
+
+        updateSliderPosition();
+
+        function updateSliderPosition() {
+            slideWrapper.style.transform = "translateX(" + (-slideIndex * 100) + "%)";
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % totalSlides;
+            updateSliderPosition();
+        }
+
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+            updateSliderPosition();
+        }
+    </script>
+</body>
+</html>

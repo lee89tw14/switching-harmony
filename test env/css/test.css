@@ -1,0 +1,187 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+}
+
+nav.hide {
+    max-height: 0;
+    padding: 0;
+}
+nav.show {
+    max-height: 500px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+nav li {
+    margin-right: 15px;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* 漢堡選單按鈕 (小螢幕) */
+.nav-toggle {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    display: none; /* 大螢幕隱藏，小螢幕顯示 */
+}
+
+/* 全頁置中內容 */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平置中 */
+    justify-content: center; /* 垂直置中 */
+    height: calc(100vh - 60px); /* 扣除導覽列區域的高度 */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+h1, p {
+    margin: 10px 0;
+}
+
+/* 上/下一頁按鈕 */
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    width: 300px;
+}
+
+.page-nav button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.page-nav button:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+/* Slider 區域 (Template 1) */
+.slider-container {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto; /* 與內容保持距離 */
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.slide-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.description {
+    background: #f4f4f4;
+    padding: 10px;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+}
+
+/* Slider左右切換箭頭 */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    line-height: 30px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    user-select: none;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+
+/* 並排圖片區域 (Template 2) */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.image-item {
+    max-width: 200px;
+    text-align: center;
+}
+.image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.image-caption {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* RWD */
+@media (max-width: 600px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin-bottom: 10px;
+    }
+}

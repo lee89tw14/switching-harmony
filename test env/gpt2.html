@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <title>最終範例網頁</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+
+        /* 預設導覽列樣式 */
+        nav {
+            background-color: #333;
+            padding: 10px;
+            transition: max-height 0.3s ease;
+            overflow: hidden;
+        }
+
+        /* 導覽列展開時的高度可根據實際連結數量調整
+           若使用 max-height: 0 及 max-height: 500px 是一種簡易的展開/收合動畫手法 */
+        nav.hide {
+            max-height: 0;
+            padding: 0;
+        }
+        nav.show {
+            max-height: 500px; 
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav li {
+            margin-right: 15px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* 漢堡選單按鈕 */
+        .nav-toggle {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            display: none; /* 預設隱藏，在小螢幕顯示 */
+        }
+
+        /* 置中內容的容器 */
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 水平置中 */
+            justify-content: center; /* 垂直置中 */
+            height: calc(100vh - 60px); /* 扣除導覽列區域高度的視窗高度 */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1, p {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        /* 上/下一頁按鈕容器 */
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            width: 300px;
+        }
+
+        .page-nav button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .page-nav button:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+
+        /* 圖片並排顯示且置中 */
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .image-item {
+            max-width: 200px;
+            text-align: center;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        @media (max-width: 600px) {
+            /* 小螢幕顯示漢堡選單按鈕 */
+            .nav-toggle {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顯示/隱藏導覽列的按鈕（在小螢幕特別好用） -->
+    <button class="nav-toggle" id="navToggleBtn">☰</button>
+
+    <nav id="mainNav" class="show">
+        <ul>
+            <li><a href="page1.html">頁面1</a></li>
+            <li><a href="page2.html">頁面2</a></li>
+            <li><a href="page3.html">頁面3</a></li>
+            <li><a href="page4.html">頁面4</a></li>
+            <li><a href="page5.html">頁面5</a></li>
+            <li><a href="page6.html">頁面6</a></li>
+            <li><a href="page7.html">頁面7</a></li>
+            <li><a href="page8.html">頁面8</a></li>
+            <li><a href="page9.html">頁面9</a></li>
+            <li><a href="page10.html">頁面10</a></li>
+            <li><a href="page11.html">頁面11</a></li>
+            <li><a href="page12.html">頁面12</a></li>
+            <li><a href="page13.html">頁面13</a></li>
+            <li><a href="page14.html">頁面14</a></li>
+            <li><a href="page15.html">頁面15</a></li>
+            <li><a href="page16.html">頁面16</a></li>
+            <li><a href="page17.html">頁面17</a></li>
+            <li><a href="page18.html">頁面18</a></li>
+            <li><a href="page19.html">頁面19</a></li>
+            <li><a href="page20.html">頁面20</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+        <h1>最終範例網頁</h1>
+        <p>此範例示範可顯示/隱藏的導航列，以及置中的內容與圖片敘述。</p>
+
+        <div class="page-nav">
+            <button id="prevPageBtn" disabled>← 上一頁</button>
+            <button id="nextPageBtn">下一頁 →</button>
+        </div>
+
+        <div class="image-gallery">
+            <div class="image-item">
+                <img src="image1.jpg">
+                <div class="image-caption">圖片1描述文字</div>
+            </div>
+            <div class="image-item">
+                <img src="image2.jpg">
+                <div class="image-caption">圖片2描述文字</div>
+            </div>
+            <div class="image-item">
+                <img src="image3.jpg">
+                <div class="image-caption">圖片3描述文字</div>
+            </div>
+            <!-- 視需求增加更多圖片 -->
+        </div>
+    </div>
+
+    <script>
+        var currentPage = 1;
+        var totalPages = 20;
+
+        var prevPageBtn = document.getElementById('prevPageBtn');
+        var nextPageBtn = document.getElementById('nextPageBtn');
+
+        function updatePageNavButtons() {
+            if (currentPage <= 1) {
+                prevPageBtn.disabled = true;
+            } else {
+                prevPageBtn.disabled = false;
+            }
+
+            if (currentPage >= totalPages) {
+                nextPageBtn.disabled = true;
+            } else {
+                nextPageBtn.disabled = false;
+            }
+        }
+
+        updatePageNavButtons();
+
+        prevPageBtn.addEventListener('click', function() {
+            if (currentPage > 1) {
+                window.location.href = 'page' + (currentPage - 1) + '.html';
+            }
+        });
+
+        nextPageBtn.addEventListener('click', function() {
+            if (currentPage < totalPages) {
+                window.location.href = 'page' + (currentPage + 1) + '.html';
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                if (currentPage > 1) {
+                    window.location.href = 'page' + (currentPage - 1) + '.html';
+                }
+            } else if (event.key === 'ArrowRight') {
+                if (currentPage < totalPages) {
+                    window.location.href = 'page' + (currentPage + 1) + '.html';
+                }
+            }
+        });
+
+        // 顯示/隱藏導覽列的程式
+        var navToggleBtn = document.getElementById('navToggleBtn');
+        var mainNav = document.getElementById('mainNav');
+
+        navToggleBtn.addEventListener('click', function() {
+            if (mainNav.classList.contains('show')) {
+                mainNav.classList.remove('show');
+                mainNav.classList.add('hide');
+            } else {
+                mainNav.classList.remove('hide');
+                mainNav.classList.add('show');
+            }
+        });
+    </script>
+</body>
+</html>
