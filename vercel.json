@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/test gpt/index.html","destination": "/test gpt/page1(index).html" }
+    ]
+}
+  
