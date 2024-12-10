@@ -85,5 +85,51 @@
     
 
     <script src="js/script.js"></script>
+    <script>
+        var currentPage = 1; 
+        var totalPages = 20;
+        var prevPageBtn = document.getElementById('prevPageBtn');
+        var nextPageBtn = document.getElementById('nextPageBtn');
+
+        function updatePageNavButtons() {
+            if (currentPage <= 1) {
+                prevPageBtn.disabled = true;
+            } else {
+                prevPageBtn.disabled = false;
+            }
+
+            if (currentPage >= totalPages) {
+                nextPageBtn.disabled = true;
+            } else {
+                nextPageBtn.disabled = false;
+            }
+        }
+
+        updatePageNavButtons();
+
+        prevPageBtn.addEventListener('click', function() {
+            if (currentPage > 1) {
+                window.location.href = 'page' + (currentPage - 1) + '.html';
+            }
+        });
+
+        nextPageBtn.addEventListener('click', function() {
+            if (currentPage < totalPages) {
+                window.location.href = 'page' + (currentPage + 1) + '.html';
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                if (currentPage > 1) {
+                    window.location.href = 'page' + (currentPage - 1) + '.html';
+                }
+            } else if (event.key === 'ArrowRight') {
+                if (currentPage < totalPages) {
+                    window.location.href = 'page' + (currentPage + 1) + '.html';
+                }
+            }
+        }); 
+    </script>
 </body>
 </html>
