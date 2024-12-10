@@ -1,72 +1,84 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-    <head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>初志貫徹NE　〜スイッチングハーモニーを奏でよう〜</title>
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="fonts/fontawesome-6.7.1/css/all.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/menu_topexpand.css" />
-		<script src="js/jquery.min.js"></script>
-		<!--[if IE]>
-  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<div class="container">
-			<div class="menu-wrap">
-				<nav class="menu">
-					<div class="icon-list">
-						<a href="index.html"><i class="fas fa-home"></i><span>HOME</span></a>
-						<a href="spec.html"><i class="fas fa-server"></i><span>SPEC</span></a>
-						<a href="member.html"><i class="fas fa-user-group"></i><span>MEMBER</span></a>
-						<a href="installation.html"><i class="fas fa-screwdriver-wrench"></i><span>INSTALLATION</span></a>
-						<a href="result.html"><i class="fas fa-flag-checkered"></i><span>RESULT</span></a>
-						<a href="end.html"><i class="fas fa-mug-hot"></i><span>END...</span></a>
-					</div>
-				</nav>
-			</div>
-			<button class="menu-button" id="open-button"></button>
-			<div class="content-wrap">
-				<div class="content">
-					<header class="codrops-header">
-						<h1>3拠点のホームラボをデータセンターを作りたい<span>Three home lab as Datacenter</span></h1> <!-- ここだけ変更をしましょう -->
-					</header>
-					<div class="main-content" class="codrops-header">
-						<h2>這裡是主要內容標題</h2>
-						<p>這裡放置您的文字敘述。</p>
-						<!-- 小图 -->
-						<img class="small" src="img/related/PerspectiveNavigation.png">
-						<img class="small" src="img/related/sidebartransitions.png">
-						<!-- END -->
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>RWD整合範例網頁</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Font Awesome 用於圖示 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pb+5U/Xl3Uq6J/6BkdgpvJc9SWaR6/PniXKRu9+1i2aZlE1aDgbyM6ftG+ccnTz+T0VRD0yCmxJ71bS6BxF2Ug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Header: 導覽列靠右對齊 -->
+    <header class="header">
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i><span>HOME</span></a></li>
+                <li><a href="spec.html"><i class="fas fa-server"></i><span>SPEC</span></a></li>
+                <li><a href="member.html"><i class="fas fa-user-group"></i><span>MEMBER</span></a></li>
+                <li><a href="installation.html"><i class="fas fa-screwdriver-wrench"></i><span>INSTALLATION</span></a></li>
+                <li><a href="result.html"><i class="fas fa-flag-checkered"></i><span>RESULT</span></a></li>
+                <li><a href="end.html"><i class="fas fa-mug-hot"></i><span>END...</span></a></li>
+            </ul>
+        </nav>
+    </header>
 
-						<!-- 大图div -->
-						<div class="big">
-    						<img class="big_img" src="">
-						</div>
-					</div>
-				</div>
-			</div><!-- /content-wrap -->
-		</div><!-- /container -->
-		<script src="js/classie.js"></script>
-		<script src="js/main.js"></script>
-		<script>
-			// 小图点击放大
-			$("img").click(function() {
-				// 获取当前点击小图的src
-				let imgSrc = $(this).attr("src");
-				// 将获取到的src赋值到大图显示区域img的src里
-				$(".big_img").attr("src", imgSrc);
-				// 显示大图区域
-				$(".big").show();
-			})
-			
-			// 隐藏大图显示区域
-			$(".big").click(function() {
-				$(this).hide();
-			})
-		</script>
-	</body>
+    <!-- 主內容區域 -->
+    <main class="wrapper">
+        <h1>RWD整合範例網頁</h1>
+        <p>此範例示範了RWD響應式設計，導航列與圖片在小螢幕下會自動調整顯示方式。</p>
+
+        <!-- 圖片 Slider -->
+        <div class="slider-container">
+            <div class="slide-wrapper" id="slideWrapper">
+                <div class="slide">
+                    <img src="images/image1.jpg" alt="圖片1描述" onclick="showOverlay('images/image1.jpg')">
+                    <div class="description">圖片1的描述文字</div>
+                </div>
+                <div class="slide">
+                    <img src="images/image2.jpg" alt="圖片2描述" onclick="showOverlay('images/image2.jpg')">
+                    <div class="description">圖片2的描述文字</div>
+                </div>
+                <div class="slide">
+                    <img src="images/image3.jpg" alt="圖片3描述" onclick="showOverlay('images/image3.jpg')">
+                    <div class="description">圖片3的描述文字</div>
+                </div>
+            </div>
+            <div class="prev" onclick="prevSlide()">&lt;</div>
+            <div class="next" onclick="nextSlide()">&gt;</div>
+        </div>
+
+        <!-- 並排圖片展示區 -->
+        <div class="image-gallery">
+            <div class="image-item">
+                <img src="images/image1.jpg" onclick="showOverlay('images/image1.jpg')">
+                <div class="image-caption">圖片1描述文字</div>
+            </div>
+            <div class="image-item">
+                <img src="images/image2.jpg" onclick="showOverlay('images/image2.jpg')">
+                <div class="image-caption">圖片2描述文字</div>
+            </div>
+            <div class="image-item">
+                <img src="images/image3.jpg" onclick="showOverlay('images/image3.jpg')">
+                <div class="image-caption">圖片3描述文字</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 放大圖片 Overlay -->
+    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
+        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
+        <img id="overlayImage" src="" alt="放大圖片">
+    </div>
+
+    <!-- Footer: 上/下一頁按鈕 -->
+    <footer class="footer">
+        <div class="page-nav">
+            <button id="prevPageBtn" disabled>← 上一頁</button>
+            <button id="nextPageBtn">下一頁 →</button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
