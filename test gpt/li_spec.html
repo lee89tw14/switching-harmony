@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>スイッチングハーモニー</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="fonts/fontawesome-6.7.1/css/all.min.css" />
+</head>
+<body>
+    <!-- Header: 導覽列靠右對齊 -->
+    <header class="header">
+        <nav id="mainNav">
+            <ul>
+                <li><a href="page1.html"><i class="fas fa-home"></i><span>HOME</span></a></li>
+                <li><a href="page2.html"><i class="fas fa-user-group"></i><span>MEMBER</span></a></li>
+                <li><a href="page3(spec0).html"><i class="fas fa-server"></i><span>SPEC</span></a></li>
+                <li><a href="installation0.html"><i class="fas fa-screwdriver-wrench"></i><span>INSTALLATION</span></a></li>
+                <li><a href="result0.html"><i class="fas fa-flag-checkered"></i><span>RESULT</span></a></li>
+                <li><a href="end0.html"><i class="fas fa-mug-hot"></i><span>END...</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <h1>李宅ラボ</h1>
+
+        <!-- 並排圖片展示區 -->
+        <div class="image-gallery">
+            <div class="image-item">
+                <img src="images/specs/LI/IMG_6847.jpg" onclick="showOverlay('images/specs/LI/IMG_6847.jpg')">
+                <div class="image-caption">ルータ(OpenWRT)</div>
+            </div>
+            <div class="image-item">
+                <img src="images/specs/LI/IMG_6848.jpg" onclick="showOverlay('images/specs/LI/IMG_6848.jpg')">
+                <div class="image-caption">Proxmox鯖(余ったノートパソコン)</div>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <!-- 放大圖片 Overlay -->
+    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
+    <!-- 增加關閉按鈕 -->
+        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
+        <img id="overlayImage" src="" alt="放大圖片">
+    </div>
+
+<!-- Footer: 上/下一頁按鈕 -->
+    <footer class="footer">
+        <div class="page-nav">
+            <button id="prevPageBtn" disabled>← 前へ</button>
+            <button id="nextPageBtn">次へ →</button>
+        </div>
+    </footer>
+    
+
+    <script src="js/overlay.js"></script>
+    <script src="js/slider.js"></script>
+    <script>
+        var currentPage = 4; 
+        var totalPages = 20;
+        var prevPageBtn = document.getElementById('prevPageBtn');
+        var nextPageBtn = document.getElementById('nextPageBtn');
+
+        function updatePageNavButtons() {
+            if (currentPage <= 1) {
+                prevPageBtn.disabled = true;
+            } else {
+                prevPageBtn.disabled = false;
+            }
+
+            if (currentPage >= totalPages) {
+                nextPageBtn.disabled = true;
+            } else {
+                nextPageBtn.disabled = false;
+            }
+        }
+
+        updatePageNavButtons();
+
+        prevPageBtn.addEventListener('click', function() {
+            if (currentPage > 1) {
+                window.location.href = 'page' + (currentPage - 1) + '.html';
+            }
+        });
+
+        nextPageBtn.addEventListener('click', function() {
+            if (currentPage < totalPages) {
+                window.location.href = 'page' + (currentPage + 1) + '.html';
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                if (currentPage > 1) {
+                    window.location.href = 'page' + (currentPage - 1) + '.html';
+                }
+            } else if (event.key === 'ArrowRight') {
+                if (currentPage < totalPages) {
+                    window.location.href = 'page' + (currentPage + 1) + '.html';
+                }
+            }
+        }); 
+    </script>
+</body>
+</html>
