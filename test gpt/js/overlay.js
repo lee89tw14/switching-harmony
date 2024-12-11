@@ -1,25 +1,3 @@
-// Slider 相關
-var slideIndex = 0;
-var slides = document.getElementsByClassName("slide");
-var slideWrapper = document.getElementById("slideWrapper");
-var totalSlides = slides.length;
-
-function updateSliderPosition() {
-    slideWrapper.style.transform = "translateX(" + (-slideIndex * 100) + "%)";
-}
-
-function nextSlide() {
-    slideIndex = (slideIndex + 1) % totalSlides;
-    updateSliderPosition();
-}
-
-function prevSlide() {
-    slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
-    updateSliderPosition();
-}
-
-updateSliderPosition(); 
-
 // 放大圖片的Overlay功能
 function showOverlay(imageSrc) {
     var overlay = document.getElementById('overlay');
@@ -27,7 +5,6 @@ function showOverlay(imageSrc) {
     overlayImage.src = imageSrc;
     overlay.classList.add('show');
 }
-
 function hideOverlay(event) {
     // 如果點擊目標是 overlay 自身(背景區域)而非圖片本身才關閉
     if (event.target.id === 'overlay') {
@@ -37,7 +14,6 @@ function hideOverlay(event) {
         overlayImage.src = ""; // 清空圖片
     }
 }
-
 function hideOverlayButton(event) {
     // 按鈕點擊後直接關閉 overlay，避免被 hideOverlay(event) 的判斷影響
     var overlay = document.getElementById('overlay');
