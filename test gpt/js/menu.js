@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var dropdown = document.querySelector('.dropdown');
     var submenu = dropdown.querySelector('.submenu');
 
-    // 子選單選項資料可以放在JS中，避免在HTML中一開始就出現
+    // 在JS中定義子選單項目，包含Font Awesome的class名稱
     var menuItems = [
-        { text: 'Hardware', link: 'page3.html' },
-        { text: 'Software', link: 'page4.html' },
+        { text: 'Hardware', link: 'page3.html', icon: 'fas fa-tools' },
+        { text: 'Software', link: 'page4.html', icon: 'fas fa-laptop-code' }
     ];
 
     dropdown.addEventListener('mouseenter', function() {
@@ -15,9 +15,17 @@ document.addEventListener('DOMContentLoaded', function() {
         // 動態建立子選單項目
         menuItems.forEach(function(item) {
             var li = document.createElement('li');
+            
             var a = document.createElement('a');
             a.href = item.link;
-            a.textContent = item.text;
+
+            // 建立<i>標籤來放置Font Awesome圖示
+            var iconElem = document.createElement('i');
+            iconElem.className = item.icon; // 使用menuItems中定義的icon class
+            // 將icon加入a中，並在icon後加入一點空白再接文字
+            a.appendChild(iconElem);
+            a.appendChild(document.createTextNode(' ' + item.text));
+            
             li.appendChild(a);
             submenu.appendChild(li);
         });
