@@ -18,10 +18,15 @@ html, body {
     justify-content: flex-end;
 }
 #mainNav li { 
-    position:relative; margin:0 10px; 
+    position:relative; 
+    margin:0 10px; 
 }
 #mainNav li a { 
-    color:#fff; text-decoration:none; display:inline-block; 
+    color:#fff; 
+    text-decoration:none; 
+    display:inline-block; 
+    gap: 5px;
+    display: flex;
 }
 #mainNav ul {
     list-style: none;
