@@ -23,25 +23,27 @@
     </header>
 
     <div class="wrapper">
-        <h1>メンバーズ紹介</h1>
+        <h1>利用ソフトウェア紹介</h1>
 
-        <!-- 並排圖片展示區 -->
-        <div class="image-gallery">
-            <div class="image-item">
-                <img src="images/members/DSC00278.jpg" onclick="showOverlay('images/members/DSC00278.jpg')">
-                <div class="image-caption">桐山</div>
+        <!-- 圖片 Slider -->
+        <div class="slider-container">
+            <div class="slide-wrapper" id="slideWrapper">
+                <div class="slide">
+                    <img src="images/spec_soft/Cloudflare.png" alt="圖片1描述" onclick="showOverlay('images/spec_soft/Cloudflare.png')">
+                    <div class="description">Cloudflare</div>
+                </div>
+                <div class="slide">
+                    <img src="images/spec_soft/Tunnel.png" alt="圖片2描述" onclick="showOverlay('images/spec_soft/Tunnel.png')">
+                    <div class="description">CF Tunnel</div>
+                </div>
+                <div class="slide">
+                    <img src="images/spec_soft/Tailscale.png" alt="圖片2描述" onclick="showOverlay('images/spec_soft/Tailscale.png')">
+                    <div class="description">Tailscale</div>
+                </div>
             </div>
-            <div class="image-item">
-                <img src="images/members/IMG_3879.jpg" onclick="showOverlay('images/members/IMG_3879.jpg')">
-                <div class="image-caption">村井</div>
-            </div>
-            <div class="image-item">
-                <img src="images/members/DSC01712_fix.png" onclick="showOverlay('images/members/DSC01712_fix.png')">
-                <div class="image-caption">李</div>
-            </div>
+            <div class="prev" onclick="prevSlide()">&lt;</div>
+            <div class="next" onclick="nextSlide()">&gt;</div>
         </div>
-        
-
     </div>
 
     <!-- 放大圖片 Overlay -->
@@ -63,7 +65,7 @@
     <script src="js/overlay.js"></script>
     <script src="js/slider.js"></script>
     <script>
-        var currentPage = 2; 
+        var currentPage = 4; 
         var totalPages = 20;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
