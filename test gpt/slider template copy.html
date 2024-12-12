@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>スイッチングハーモニー</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style copy.css">
     <link rel="stylesheet" type="text/css" href="fonts/fontawesome-6.7.1/css/all.min.css" />
 </head>
 <body>
@@ -29,23 +29,25 @@
     <div class="wrapper">
         <h1>メンバーズ紹介</h1>
 
-        <!-- 並排圖片展示區 -->
-        <div class="image-gallery">
-            <div class="image-item">
-                <img src="images/members/DSC00278.jpg" onclick="showOverlay('images/members/DSC00278.jpg')">
-                <div class="image-caption">桐山</div>
+        <!-- 圖片 Slider -->
+        <div class="slider-container">
+            <div class="slide-wrapper" id="slideWrapper">
+                <div class="slide">
+                    <img src="images/members/DSC01712_fix.png" alt="圖片1描述" onclick="showOverlay('images/members/DSC01712_fix.png')">
+                    <div class="description">圖片1的描述文字</div>
+                </div>
+                <div class="slide">
+                    <img src="images/members/IMG_3879.jpg" alt="圖片2描述" onclick="showOverlay('images/members/IMG_3879.jpg')">
+                    <div class="description">圖片2的描述文字</div>
+                </div>
+                <div class="slide">
+                    <img src="images/members/DSC01842.jpg" alt="圖片3描述" onclick="showOverlay('images/members/DSC01842.jpg')">
+                    <div class="description">圖片3的描述文字</div>
+                </div>
             </div>
-            <div class="image-item">
-                <img src="images/members/IMG_3879.jpg" onclick="showOverlay('images/members/IMG_3879.jpg')">
-                <div class="image-caption">村井</div>
-            </div>
-            <div class="image-item">
-                <img src="images/members/DSC01712_fix.png" onclick="showOverlay('images/members/DSC01712_fix.png')">
-                <div class="image-caption">李</div>
-            </div>
+            <div class="prev" onclick="prevSlide()">&lt;</div>
+            <div class="next" onclick="nextSlide()">&gt;</div>
         </div>
-        
-
     </div>
 
     <!-- 放大圖片 Overlay -->
@@ -66,7 +68,6 @@
 
     <script src="js/overlay.js"></script>
     <script src="js/slider.js"></script>
-    <script src="js/menu.js"></script>
     <script>
         var currentPage = 1; 
         var totalPages = 20;
@@ -113,5 +114,6 @@
             }
         }); 
     </script>
+    <script src="js/menu.js"></script>
 </body>
 </html>
