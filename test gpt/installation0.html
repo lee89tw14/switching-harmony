@@ -27,35 +27,9 @@
     </header>
 
     <div class="wrapper">
-        <h1>インストール過程</h1>
-
-        <!-- 圖片 Slider -->
-        <div class="slider-container">
-            <div class="slide-wrapper" id="slideWrapper">
-                <div class="slide">
-                    <img src="images/members/DSC01712_fix.png" alt="圖片1描述" onclick="showOverlay('images/members/DSC01712_fix.png')">
-                    <div class="description">圖片1的描述文字</div>
-                </div>
-                <div class="slide">
-                    <img src="images/members/IMG_3879.jpg" alt="圖片2描述" onclick="showOverlay('images/members/IMG_3879.jpg')">
-                    <div class="description">圖片2的描述文字</div>
-                </div>
-                <div class="slide">
-                    <img src="images/members/DSC01842.jpg" alt="圖片3描述" onclick="showOverlay('images/members/DSC01842.jpg')">
-                    <div class="description">圖片3的描述文字</div>
-                </div>
-            </div>
-            <div class="prev" onclick="prevSlide()">&lt;</div>
-            <div class="next" onclick="nextSlide()">&gt;</div>
-        </div>
+        <img src="images/genbaneko.jpg" alt="">
     </div>
 
-    <!-- 放大圖片 Overlay -->
-    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
-    <!-- 增加關閉按鈕 -->
-        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
-        <img id="overlayImage" src="" alt="放大圖片">
-    </div>
 
 <!-- Footer: 上/下一頁按鈕 -->
     <footer class="footer">
@@ -70,10 +44,11 @@
     <script src="js/slider.js"></script>
     <script src="js/menu.js"></script>
     <script>
-        var currentPage = 5; 
+        var currentPage = 1; 
         var totalPages = 20;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
+
         function updatePageNavButtons() {
             if (currentPage <= 1) {
                 prevPageBtn.disabled = true;
@@ -87,17 +62,21 @@
                 nextPageBtn.disabled = false;
             }
         }
+
         updatePageNavButtons();
+
         prevPageBtn.addEventListener('click', function() {
             if (currentPage > 1) {
                 window.location.href = 'page' + (currentPage - 1) + '.html';
             }
         });
+
         nextPageBtn.addEventListener('click', function() {
             if (currentPage < totalPages) {
                 window.location.href = 'page' + (currentPage + 1) + '.html';
             }
         });
+
         document.addEventListener('keydown', function(event) {
             if (event.key === 'ArrowLeft') {
                 if (currentPage > 1) {
