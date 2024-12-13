@@ -24,3 +24,17 @@ function hideOverlayButton(event) {
     // 為避免事件冒泡影響 overlay 的點擊事件，可加上阻止冒泡
     event.stopPropagation();
 }
+// 顯示文本彈窗的功能
+function showTextOverlay(textContent) {
+    var textOverlay = document.getElementById('textOverlay');
+    var textOverlayContent = document.getElementById('textOverlayContent');
+    textOverlayContent.innerText = textContent;
+    textOverlay.classList.add('show');
+}
+function hideTextOverlay(event) {
+    // 如果點擊的是背景 (textOverlay) 或關閉按鈕，則關閉
+    if (event.target.id === 'textOverlay' || event.target.classList.contains('close-button')) {
+        var textOverlay = document.getElementById('textOverlay');
+        textOverlay.classList.remove('show');
+    }
+}

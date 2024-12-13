@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // 在JS中定義子選單項目，包含Font Awesome的class名稱
     var menuItems = [
         { text: 'Hardware', link: 'page3.html', icon: 'fas fa-tools' },
-        { text: 'Software', link: 'page4.html', icon: 'fas fa-laptop-code' }
+        { text: 'Software', link: 'page4.html', icon: 'fas fa-laptop-code' },
+        { text: 'IP table', link: 'iptable.html', icon: 'fa-solid fa-network-wired' }
     ];
 
     dropdown.addEventListener('mouseenter', function() {

@@ -27,26 +27,22 @@
     </header>
 
     <div class="wrapper">
-        <h1>利用ソフトウェア紹介</h1>
+        <h1>メンバーズ紹介</h1>
 
         <!-- 圖片 Slider -->
         <div class="slider-container">
             <div class="slide-wrapper" id="slideWrapper">
                 <div class="slide">
-                    <img src="images/spec_soft/proxmoxve.png" alt="Proxmox VE" onclick="showOverlay('images/spec_soft/proxmoxve.png')">
-                    <div class="description" onclick="showTextOverlay('Proxmox VE 是一個開源虛擬化管理平台，提供 KVM 和 LXC 容器支援。')">Proxmox VE</div>
+                    <img src="images/members/DSC01712_fix.png" alt="圖片1描述" onclick="showOverlay('images/members/DSC01712_fix.png')">
+                    <div class="description">圖片1的描述文字</div>
                 </div>
                 <div class="slide">
-                    <img src="images/spec_soft/Tailscale.png" alt="Tailscale" onclick="showOverlay('images/spec_soft/Tailscale.png')">
-                    <div class="description" onclick="showTextOverlay('Tailscale 是基於 WireGuard 的零配置 VPN，使不同環境下的設備更容易互聯。')">Tailscale</div>
+                    <img src="images/members/IMG_3879.jpg" alt="圖片2描述" onclick="showOverlay('images/members/IMG_3879.jpg')">
+                    <div class="description">圖片2的描述文字</div>
                 </div>
                 <div class="slide">
-                    <img src="images/spec_soft/Cloudflare.png" alt="Cloudflare" onclick="showOverlay('images/spec_soft/Cloudflare.png')">
-                    <div class="description" onclick="showTextOverlay('Cloudflare 提供 CDN、DNS、WAF 等服務，提升網站速度與安全性。')">Cloudflare</div>
-                </div>
-                <div class="slide">
-                    <img src="images/spec_soft/Tunnel.png" alt="CF Tunnel" onclick="showOverlay('images/spec_soft/Tunnel.png')">
-                    <div class="description" onclick="showTextOverlay('Cloudflare Tunnel 可讓您在不開放防火牆的情況下公開內部服務。')">CF Tunnel</div>
+                    <img src="images/members/DSC01842.jpg" alt="圖片3描述" onclick="showOverlay('images/members/DSC01842.jpg')">
+                    <div class="description">圖片3的描述文字</div>
                 </div>
             </div>
             <div class="prev" onclick="prevSlide()">&lt;</div>
@@ -54,13 +50,6 @@
         </div>
     </div>
 
-    <!-- 新增的文本彈窗 Overlay -->
-    <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
-        <div class="text-content">
-            <button class="close-button" onclick="hideTextOverlay(event)">×</button>
-            <p id="textOverlayContent"></p>
-        </div>
-    </div>
     <!-- 放大圖片 Overlay -->
     <div class="overlay" id="overlay" onclick="hideOverlay(event)">
     <!-- 增加關閉按鈕 -->
@@ -81,11 +70,10 @@
     <script src="js/slider.js"></script>
     <script src="js/menu.js"></script>
     <script>
-        var currentPage = 4; 
+        var currentPage = 5; 
         var totalPages = 20;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
-
         function updatePageNavButtons() {
             if (currentPage <= 1) {
                 prevPageBtn.disabled = true;
@@ -99,21 +87,17 @@
                 nextPageBtn.disabled = false;
             }
         }
-
         updatePageNavButtons();
-
         prevPageBtn.addEventListener('click', function() {
             if (currentPage > 1) {
                 window.location.href = 'page' + (currentPage - 1) + '.html';
             }
         });
-
         nextPageBtn.addEventListener('click', function() {
             if (currentPage < totalPages) {
                 window.location.href = 'page' + (currentPage + 1) + '.html';
             }
         });
-
         document.addEventListener('keydown', function(event) {
             if (event.key === 'ArrowLeft') {
                 if (currentPage > 1) {

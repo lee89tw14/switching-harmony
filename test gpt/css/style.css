@@ -32,7 +32,7 @@ html, body {
     list-style: none;
     display: flex;
     margin: 0;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 #mainNav ul li {
     margin: 0 10px;
@@ -303,6 +303,42 @@ a {
     font-size: 3vh;
     cursor: pointer;
 }
+/* 為文本彈窗新增的樣式 */
+.text-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100; /* 高於圖片 overlay */
+}
+.text-overlay.show {
+    display: flex;
+}
+.text-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+.text-content .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 
 /* 媒体查询 */
 @media (max-width: 600px) {
