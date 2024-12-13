@@ -27,45 +27,9 @@
     </header>
 
     <div class="wrapper">
-        <h1>インストール過程</h1>
-        <!-- 圖片 Slider -->
-        <div class="slider-container">
-            <div class="slide-wrapper" id="slideWrapper">
-                <div class="slide">
-                    <img src="images/spec_soft/proxmoxve.png" alt="Proxmox VE" onclick="showOverlay('images/spec_soft/proxmoxve.png')">
-                    <div class="description" onclick="showTextOverlay('Proxmox VEは、KVMとLXCコンテナをサポートするオープンソースの仮想化管理プラットフォームです。')">Proxmox VE</div>
-                </div>
-                <div class="slide">
-                    <img src="images/spec_soft/Tailscale.png" alt="Tailscale" onclick="showOverlay('images/spec_soft/Tailscale.png')">
-                    <div class="description" onclick="showTextOverlay('TailscaleはWireGuardをベースとしたゼロ・コンフィギュレーションVPNで、異なる環境にあるデバイスの相互接続を容易にする。')">Tailscale</div>
-                </div>
-                <div class="slide">
-                    <img src="images/spec_soft/Cloudflare.png" alt="Cloudflare" onclick="showOverlay('images/spec_soft/Cloudflare.png')">
-                    <div class="description" onclick="showTextOverlay('Cloudflareは、CDN、DNS、WAF、その他のサービスを提供し、ウェブサイトのスピードとセキュリティを向上させます。')">Cloudflare</div>
-                </div>
-                <div class="slide">
-                    <img src="images/spec_soft/Tunnel.png" alt="CF Tunnel" onclick="showOverlay('images/spec_soft/Tunnel.png')">
-                    <div class="description" onclick="showTextOverlay('Cloudflare Tunnelを使用すると、ファイアウォールを開くことなく内部サービスを公開できます。')">CF Tunnel</div>
-                </div>
-            </div>
-            <div class="prev" onclick="prevSlide()">&lt;</div>
-            <div class="next" onclick="nextSlide()">&gt;</div>
-        </div>
+        <img src="images/genbaneko.jpg" alt="">
     </div>
 
-    <!-- text Overlay -->
-    <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
-        <div class="text-content">
-            <button class="close-button" onclick="hideTextOverlay(event)">×</button>
-            <p id="textOverlayContent"></p>
-        </div>
-    </div>
-    <!-- 放大圖片 Overlay -->
-    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
-    <!-- 增加關閉按鈕 -->
-        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
-        <img id="overlayImage" src="" alt="放大圖片">
-    </div>
 
 <!-- Footer: 上/下一頁按鈕 -->
     <footer class="footer">
@@ -80,10 +44,11 @@
     <script src="js/slider.js"></script>
     <script src="js/menu.js"></script>
     <script>
-        var currentPage = 5; 
+        var currentPage = 1; 
         var totalPages = 20;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
+
         function updatePageNavButtons() {
             if (currentPage <= 1) {
                 prevPageBtn.disabled = true;
@@ -97,17 +62,21 @@
                 nextPageBtn.disabled = false;
             }
         }
+
         updatePageNavButtons();
+
         prevPageBtn.addEventListener('click', function() {
             if (currentPage > 1) {
                 window.location.href = 'page' + (currentPage - 1) + '.html';
             }
         });
+
         nextPageBtn.addEventListener('click', function() {
             if (currentPage < totalPages) {
                 window.location.href = 'page' + (currentPage + 1) + '.html';
             }
         });
+
         document.addEventListener('keydown', function(event) {
             if (event.key === 'ArrowLeft') {
                 if (currentPage > 1) {
