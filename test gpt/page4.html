@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="fonts/fontawesome-6.7.1/css/all.min.css" />
 </head>
 <body>
-    <!-- Header: 導覽列靠右對齊 -->
+    <!-- Header -->
     <header class="header">
         <nav id="mainNav">
             <ul>
@@ -28,25 +28,24 @@
 
     <div class="wrapper">
         <h1>利用ソフトウェア紹介</h1>
-
-        <!-- 圖片 Slider -->
+        <!-- Photo Slider -->
         <div class="slider-container">
             <div class="slide-wrapper" id="slideWrapper">
                 <div class="slide">
                     <img src="images/spec_soft/proxmoxve.png" alt="Proxmox VE" onclick="showOverlay('images/spec_soft/proxmoxve.png')">
-                    <div class="description" onclick="showTextOverlay('Proxmox VE 是一個開源虛擬化管理平台，提供 KVM 和 LXC 容器支援。')">Proxmox VE</div>
+                    <div class="description" onclick="showTextOverlay('Proxmox VEは、KVMとLXCコンテナをサポートするオープンソースの仮想化管理プラットフォームです。')">Proxmox VE</div>
                 </div>
                 <div class="slide">
                     <img src="images/spec_soft/Tailscale.png" alt="Tailscale" onclick="showOverlay('images/spec_soft/Tailscale.png')">
-                    <div class="description" onclick="showTextOverlay('Tailscale 是基於 WireGuard 的零配置 VPN，使不同環境下的設備更容易互聯。')">Tailscale</div>
+                    <div class="description" onclick="showTextOverlay('TailscaleはWireGuardをベースとしたゼロ・コンフィギュレーションVPNで、異なる環境にあるデバイスの相互接続を容易にする。')">Tailscale</div>
                 </div>
                 <div class="slide">
                     <img src="images/spec_soft/Cloudflare.png" alt="Cloudflare" onclick="showOverlay('images/spec_soft/Cloudflare.png')">
-                    <div class="description" onclick="showTextOverlay('Cloudflare 提供 CDN、DNS、WAF 等服務，提升網站速度與安全性。')">Cloudflare</div>
+                    <div class="description" onclick="showTextOverlay('Cloudflareは、CDN、DNS、WAF、その他のサービスを提供し、ウェブサイトのスピードとセキュリティを向上させます。')">Cloudflare</div>
                 </div>
                 <div class="slide">
                     <img src="images/spec_soft/Tunnel.png" alt="CF Tunnel" onclick="showOverlay('images/spec_soft/Tunnel.png')">
-                    <div class="description" onclick="showTextOverlay('Cloudflare Tunnel 可讓您在不開放防火牆的情況下公開內部服務。')">CF Tunnel</div>
+                    <div class="description" onclick="showTextOverlay('Cloudflare Tunnelを使用すると、ファイアウォールを開くことなく内部サービスを公開できます。')">CF Tunnel</div>
                 </div>
             </div>
             <div class="prev" onclick="prevSlide()">&lt;</div>
@@ -54,21 +53,21 @@
         </div>
     </div>
 
-    <!-- 新增的文本彈窗 Overlay -->
+    <!-- text Overlay -->
     <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
         <div class="text-content">
             <button class="close-button" onclick="hideTextOverlay(event)">×</button>
             <p id="textOverlayContent"></p>
         </div>
     </div>
-    <!-- 放大圖片 Overlay -->
+    <!-- Photo Overlay -->
     <div class="overlay" id="overlay" onclick="hideOverlay(event)">
-    <!-- 增加關閉按鈕 -->
+    <!-- Close button for Photo Overlay -->
         <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
-        <img id="overlayImage" src="" alt="放大圖片">
+        <img id="overlayImage" src="" alt="写真拡大">
     </div>
 
-<!-- Footer: 上/下一頁按鈕 -->
+<!-- Footer: next/prev button -->
     <footer class="footer">
         <div class="page-nav">
             <button id="prevPageBtn" disabled>← 前へ</button>
