@@ -87,9 +87,11 @@ h1 {
     margin-bottom: 20px;
 }
 table {
+    overflow-x: auto; /* Adds horizontal scroll if content overflows */
     border-collapse: collapse;
     width: 100%;
     background: #ffffff;
+    width: 100%; /* Makes the table take up the full width available */
 }
 table tr td i{
     margin-left: 5px;
@@ -130,6 +132,12 @@ a {
     height: 100%; /* 讓整個區域可點擊 */
     width: 100%;
 }
+.table-container {
+    width: 100%;
+    max-height: 100%; /* 設置容器最大高度，避免表格過高佔滿屏幕 */
+    overflow-y: auto; /* 垂直方向啟用滾動條 */
+    overflow-x: auto; /* 水平方向啟用滾動條 */
+  }
 
 
 /* Slider 區域 */
