@@ -91,6 +91,10 @@ table {
     width: 100%;
     background: #ffffff;
 }
+table tr td i{
+    margin-left: 5px;
+    text-align: center;
+}
 th, td {
     border: 1px solid #ddd;
     text-align: left;
@@ -100,6 +104,13 @@ th, td {
 th {
     background-color: #f2f2f2;
     text-align: center;
+}
+td a{
+    text-align: center;
+    vertical-align: middle;
+}
+td ul{
+    text-align:initial;
 }
 tr:nth-child(even) {
     background-color: #f9f9f9;
