@@ -9,23 +9,7 @@
 </head>
 <body>
     <!-- Header: 導覽列靠右對齊 -->
-    <header class="header">
-        <nav id="mainNav">
-            <ul>
-                <li><a href="page1.html"><i class="fas fa-home"></i><span>HOME</span></a></li>
-                <li><a href="#"><span>PURPOSE</span></a></li>
-                <li><a href="page2.html"><i class="fas fa-user-group"></i><span>MEMBER</span></a></li>
-                <li class="dropdown" data-menu-type="hardware">
-                    <a href="#"><i class="fas fa-server"></i><span>SPEC</span></a>
-                    <!-- 預留空的submenu容器，初始無內容 -->
-                    <ul class="submenu"></ul>
-                </li>
-                <li><a href="installation0.html"><i class="fas fa-screwdriver-wrench"></i><span>INSTALLATION</span></a></li>
-                <li><a href="result0.html"><i class="fas fa-flag-checkered"></i><span>RESULT</span></a></li>
-                <li><a href="end0.html"><i class="fas fa-mug-hot"></i><span>END...</span></a></li>
-            </ul>
-        </nav>
-    </header>
+    <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
         <h1>メンバーズ紹介</h1>
@@ -67,7 +51,8 @@
 
     <script src="js/overlay.js"></script>
     <script src="js/slider.js"></script>
-    <script src="js/menu.js"></script>
+    <script src="js/navbar.js"></script>
+    <!-- <script src="js/menu.js"></script> -->
     <script>
         var currentPage = 1; 
         var totalPages = 20;
