@@ -13,59 +13,108 @@
     <link rel="manifest" href="images/favicon/site.webmanifest" />
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header: 導覽列靠右對齊 -->
     <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
-        <h1>利用ソフトウェア紹介</h1>
-        <!-- Photo Slider -->
-        <div class="slider-container">
-            <div class="slide-wrapper" id="slideWrapper">
-                <div class="slide">
-                    <img src="images/spec_soft/proxmoxve.png" alt="Proxmox VE" onclick="showOverlay('images/spec_soft/proxmoxve.png')">
-                    <div class="description" onclick="showTextOverlay('Proxmox VEは、KVMとLXCコンテナをサポートするオープンソースの仮想化管理プラットフォームです。')">Proxmox VE</div>
-                </div>
-                <div class="slide">
-                    <img src="images/spec_soft/Tailscale.png" alt="Tailscale" onclick="showOverlay('images/spec_soft/Tailscale.png')">
-                    <div class="description" onclick="showTextOverlay('TailscaleはWireGuardをベースとしたゼロ・コンフィギュレーションVPNで、\n 異なる環境にあるデバイスの相互接続を容易にします。 \n クライアントにインストールしたら管理はすべてWeb上でも可能です。')">Tailscale</div>
-                </div>
-                <div class="slide">
-                    <img src="images/spec_soft/talos linux.png" alt="Talos" onclick="showOverlay('images/spec_soft/talos linux.png')">
-                    <div class="description" onclick="showTextOverlay('Talos Linuxは、Kubernetesクラスターの実行に特化したセキュアで最小限のOSで、完全にAPI駆動で管理されるのが特徴です。')">Talos Linux</div>
-                </div>
-                <div class="slide">
-                    <img src="images/spec_soft/Cloudflare.png" alt="Cloudflare" onclick="showOverlay('images/spec_soft/Cloudflare.png')">
-                    <div class="description" onclick="showTextOverlay('Cloudflareは、CDN、DNS、WAF、その他のサービスを提供し、\n ウェブサイトのスピードとセキュリティを向上させます。\n 今や全世界の４分の１のインターネット通信をCloudflareが賄っています。')">Cloudflare</div>
-                </div>
-                <div class="slide">
-                    <img src="images/spec_soft/Tunnel.png" alt="Cloudflare Tunnel" onclick="showOverlay('images/spec_soft/Tunnel.png')">
-                    <div class="description" onclick="showTextOverlay('Cloudflare Tunnelを使用すると、ファイアウォールでのインターネットからのポートを開くことなく、\n プライベートネットワーク内で動いている内部サービスを公開できます。')">Cloudflare Tunnel</div>
-                </div>
-                <div class="slide">
-                    <img src="images/spec_soft/terraform.jpg" alt="Terraform" onclick="showOverlay('images/spec_soft/terraform.jpg')">
-                    <div class="description" onclick="showTextOverlay('HashiCorp 社が提供するIac (Infrastructure as Code) ツール \n 様々なクラウドサービスやプラットフォームで使用可能で、インフラサービスの構成管理をファイルに落とし込んで自動化する仕組み \n *画像はProxmoxの例 ')">Terraform</div>
-                </div>
+        <h1>使用ハードウェア一覧</h1>
+        <!-- 表格 -->
+        <table>
+            <tr>
+                <th>環境</th>
+                <th>ネットワーク設備</th>
+                <th>鯖spec</th>
+            </tr>
+            <tr>
+                <td><a href="murai_spec.html">村井宅ラボ<i class="fa-solid fa-images"></i></a></td>
+                <td>
+                    <ul>
+                        <li>NEC IX2215</li>
+                        <li>Vyos</li>
+                        <li>Allied-Telesis SH510-28GTX</li>
+                        <li>TP-Link Deco XE75</li>
+                    </ul>
+                </td>
+                <td>
+                    <strong>top鯖:</strong>
+                    <ul>
+                        <li>HPE ProLiant DL360 Gen9</li>
+                        <li>Xeon E5-2690v4 *2</li>
+                        <li>DDR4 2400T ECC 8GB *8</li>
+                        <li>SSD 512GB (RAID1)</li>
+                    </ul>
+                    <strong>bottom鯖:</strong>
+                    <ul>
+                        <li>HPE ProLiant DL380 Gen9</li>
+                        <li>Xeon E5-2667v4 *2</li>
+                        <li>DDR4 2400T ECC 16GB *4</li>
+                        <li>SSD 2.5TB</li>
+                        <li>HDD 1TB (ZFS RAIDZ)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="kiriyama_spec.html">桐山宅ラボ<i class="fa-solid fa-images"></i></a></td>
+                <td>
+                    <ul>
+                        <li>YAMAHA RTX3500</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>HPE Proliant ML350 Gen9</li>
+                        <li>Xeon E5-2680v4 *2</li>
+                        <li>DDR4 2133 ECC 8GB *8</li>
+                        <li>SSD 2TB</li>
+                        <li>HDD 900GB RAID1</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="li_spec.html">李宅ラボ<i class="fa-solid fa-images"></i></a></td>
+                <td>
+                    <ul>
+                        <li>Raspberry Pi 5</li>
+                        <li>OpenWRT</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>HPI Pavillion</li>
+                        <li>Core i7-8750H</li>
+                        <li>DDR4 2400 16GB x2</li>
+                        <li>SSD 2TB</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <!-- 並排圖片展示區
+        <div class="image-gallery">
+            <div class="image-item">
+                <img src="images/members/DSC00278.jpg" onclick="showOverlay('images/members/DSC00278.jpg')">
+                <div class="image-caption">桐山</div>
             </div>
-            <div class="prev" onclick="prevSlide()">&lt;</div>
-            <div class="next" onclick="nextSlide()">&gt;</div>
-        </div>
+            <div class="image-item">
+                <img src="images/members/IMG_3879.jpg" onclick="showOverlay('images/members/IMG_3879.jpg')">
+                <div class="image-caption">村井</div>
+            </div>
+            <div class="image-item">
+                <img src="images/members/DSC01712_fix.png" onclick="showOverlay('images/members/DSC01712_fix.png')">
+                <div class="image-caption">李</div>
+            </div>
+        </div> -->
+        
+
     </div>
 
-    <!-- text Overlay -->
-    <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
-        <div class="text-content">
-            <button class="close-button" onclick="hideTextOverlay(event)">×</button>
-            <p id="textOverlayContent"></p>
-        </div>
-    </div>
-    <!-- Photo Overlay -->
+    <!-- 放大圖片 Overlay -->
     <div class="overlay" id="overlay" onclick="hideOverlay(event)">
-    <!-- Close button for Photo Overlay -->
+    <!-- 增加關閉按鈕 -->
         <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
-        <img id="overlayImage" src="" alt="写真拡大">
+        <img id="overlayImage" src="" alt="放大圖片">
     </div>
 
-<!-- Footer: next/prev button -->
+<!-- Footer: 上/下一頁按鈕 -->
     <footer class="footer">
         <div class="page-nav">
             <button id="prevPageBtn" disabled>← 前へ</button>

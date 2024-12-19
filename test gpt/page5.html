@@ -13,15 +13,59 @@
     <link rel="manifest" href="images/favicon/site.webmanifest" />
 </head>
 <body>
-    <!-- Header: 導覽列靠右對齊 -->
+    <!-- Header -->
     <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
-        <img src="images/genbaneko.jpg" alt="">
+        <h1>利用ソフトウェア紹介</h1>
+        <!-- Photo Slider -->
+        <div class="slider-container">
+            <div class="slide-wrapper" id="slideWrapper">
+                <div class="slide">
+                    <img src="images/spec_soft/proxmoxve.png" alt="Proxmox VE" onclick="showOverlay('images/spec_soft/proxmoxve.png')">
+                    <div class="description" onclick="showTextOverlay('Proxmox VEは、KVMとLXCコンテナをサポートするオープンソースの仮想化管理プラットフォームです。')">Proxmox VE</div>
+                </div>
+                <div class="slide">
+                    <img src="images/spec_soft/Tailscale.png" alt="Tailscale" onclick="showOverlay('images/spec_soft/Tailscale.png')">
+                    <div class="description" onclick="showTextOverlay('TailscaleはWireGuardをベースとしたゼロ・コンフィギュレーションVPNで、\n 異なる環境にあるデバイスの相互接続を容易にします。 \n クライアントにインストールしたら管理はすべてWeb上でも可能です。')">Tailscale</div>
+                </div>
+                <div class="slide">
+                    <img src="images/spec_soft/talos linux.png" alt="Talos" onclick="showOverlay('images/spec_soft/talos linux.png')">
+                    <div class="description" onclick="showTextOverlay('Talos Linuxは、Kubernetesクラスターの実行に特化したセキュアで最小限のOSで、完全にAPI駆動で管理されるのが特徴です。')">Talos Linux</div>
+                </div>
+                <div class="slide">
+                    <img src="images/spec_soft/Cloudflare.png" alt="Cloudflare" onclick="showOverlay('images/spec_soft/Cloudflare.png')">
+                    <div class="description" onclick="showTextOverlay('Cloudflareは、CDN、DNS、WAF、その他のサービスを提供し、\n ウェブサイトのスピードとセキュリティを向上させます。\n 今や全世界の４分の１のインターネット通信をCloudflareが賄っています。')">Cloudflare</div>
+                </div>
+                <div class="slide">
+                    <img src="images/spec_soft/Tunnel.png" alt="Cloudflare Tunnel" onclick="showOverlay('images/spec_soft/Tunnel.png')">
+                    <div class="description" onclick="showTextOverlay('Cloudflare Tunnelを使用すると、ファイアウォールでのインターネットからのポートを開くことなく、\n プライベートネットワーク内で動いている内部サービスを公開できます。')">Cloudflare Tunnel</div>
+                </div>
+                <div class="slide">
+                    <img src="images/spec_soft/terraform.jpg" alt="Terraform" onclick="showOverlay('images/spec_soft/terraform.jpg')">
+                    <div class="description" onclick="showTextOverlay('HashiCorp 社が提供するIac (Infrastructure as Code) ツール \n 様々なクラウドサービスやプラットフォームで使用可能で、インフラサービスの構成管理をファイルに落とし込んで自動化する仕組み \n *画像はProxmoxの例 ')">Terraform</div>
+                </div>
+            </div>
+            <div class="prev" onclick="prevSlide()">&lt;</div>
+            <div class="next" onclick="nextSlide()">&gt;</div>
+        </div>
     </div>
 
+    <!-- text Overlay -->
+    <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
+        <div class="text-content">
+            <button class="close-button" onclick="hideTextOverlay(event)">×</button>
+            <p id="textOverlayContent"></p>
+        </div>
+    </div>
+    <!-- Photo Overlay -->
+    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
+    <!-- Close button for Photo Overlay -->
+        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
+        <img id="overlayImage" src="" alt="写真拡大">
+    </div>
 
-<!-- Footer: 上/下一頁按鈕 -->
+<!-- Footer: next/prev button -->
     <footer class="footer">
         <div class="page-nav">
             <button id="prevPageBtn" disabled>← 前へ</button>
@@ -36,7 +80,7 @@
     <!-- <script src="js/menu.js"></script> -->
     <script>
         var currentPage = 5; 
-        var totalPages = 5;
+        var totalPages = 20;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
 

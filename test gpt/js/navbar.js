@@ -1,8 +1,8 @@
 // 你的menuData與dropdown初始化程式碼可以寫在這裡
 const menuData = {
     hardware: [
-        { text: 'Hardware', link: 'page3.html', icon: 'fas fa-tools' },
-        { text: 'Software', link: 'page4.html', icon: 'fas fa-laptop-code' },
+        { text: 'Hardware', link: 'page4.html', icon: 'fas fa-tools' },
+        { text: 'Software', link: 'page5.html', icon: 'fas fa-laptop-code' },
         { text: 'IP table', link: 'iptable.html', icon: 'fa-solid fa-network-wired' }
     ]
     // hardware: [

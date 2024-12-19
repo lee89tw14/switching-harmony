@@ -139,6 +139,29 @@ a {
     overflow-x: auto; /* 水平方向啟用滾動條 */
   }
 
+/* Text Block 區域 */
+.text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 若希望文字由左至右正常排列 */
+    justify-content: flex-start; 
+    width: 80%; /* 視情況調整寬度 */
+    max-height: 60vh; /* 若需要限制高度 */
+    overflow-y: auto; /* 若文字過多可捲動 */
+    box-sizing: border-box;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    color: #333;
+    font-size: larger;
+}
+.text-block ul {
+    margin-bottom: 20px;
+}
+.text-block p {
+    line-height: 1.6;
+}
+
 
 /* Slider 區域 */
 .slider-container {
