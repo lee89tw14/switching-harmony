@@ -29,6 +29,7 @@ function showTextOverlay(textContent) {
     var textOverlay = document.getElementById('textOverlay');
     var textOverlayContent = document.getElementById('textOverlayContent');
     textOverlayContent.innerText = textContent;
+    textOverlayContent.style.fontSize = '24px';
     textOverlay.classList.add('show');
 }
 function hideTextOverlay(event) {

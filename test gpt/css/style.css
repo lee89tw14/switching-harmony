@@ -198,8 +198,8 @@ a {
 }
 .description {
     background: #f4f4f4;
-    padding: 10px;
-    font-size: 14px;
+    padding: 15px;
+    font-size: 25px;
     border-top: 1px solid #ddd;
 }
 .prev, .next {
