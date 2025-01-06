@@ -23,19 +23,25 @@
         <div class="image-gallery">
             <div class="image-item">
                 <img src="images/members/DSC00278.jpg" onclick="showOverlay('images/members/DSC00278.jpg')">
-                <div class="image-caption">桐山</div>
+                <div class="image-caption" onclick="showTextOverlay('ATM')">桐山</div>
             </div>
             <div class="image-item">
                 <img src="images/members/IMG_3879.jpg" onclick="showOverlay('images/members/IMG_3879.jpg')">
-                <div class="image-caption">村井</div>
+                <div class="image-caption" onclick="showTextOverlay('実行者')">村井</div>
             </div>
             <div class="image-item">
                 <img src="images/members/DSC01712_fix.png" onclick="showOverlay('images/members/DSC01712_fix.png')">
-                <div class="image-caption">李</div>
+                <div class="image-caption" onclick="showTextOverlay('プランナー')">李</div>
             </div>
         </div>
-        
+    </div>
 
+    <!-- text Overlay -->
+    <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
+        <div class="text-content">
+            <button class="close-button" onclick="hideTextOverlay(event)">×</button>
+            <p id="textOverlayContent"></p>
+        </div>
     </div>
 
     <!-- 放大圖片 Overlay -->
