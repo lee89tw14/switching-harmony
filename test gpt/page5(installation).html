@@ -22,11 +22,11 @@
         <div class="slider-container">
             <div class="slide-wrapper" id="slideWrapper">
                 <div class="slide">
-                    <img src="images/installation/pve install physical.jpg" alt="Proxmox VE" onclick="showOverlay('images/installation/PVE install.png')">
+                    <img src="images/installation/pve install physical.jpg" alt="Proxmox VE" onclick="showOverlay('images/installation/pve install physical.jpg')">
                     <div class="description" onclick="showTextOverlay('実機にProxmox VEのインストールを行う')">Proxmox VE</div>
                 </div>
                 <div class="slide">
-                    <img src="images/installation/pve install physical.jpg" alt="Proxmox VE" onclick="showOverlay('images/installation/PVE install.png')">
+                    <img src="images/installation/cephfs.png" alt="Proxmox VE" onclick="showOverlay('images/installation/PVE install.png')">
                     <div class="description" onclick="showTextOverlay('K8Sのストレージを永続化するために、Proxmox VE上でCephクラスタを作成し分散ストレージシステムを構築する')">CephFS</div>
                 </div>
                 <div class="slide">
@@ -34,7 +34,7 @@
                     <div class="description" onclick="showTextOverlay('Proxmoxセットアップ後、tailscaledのインストールとネットワーク参加でサイト間VPN接続を確立する')">Tailscale</div>
                 </div>
                 <div class="slide">
-                    <img src="images/installation/tailsacale web console.png" alt="Tailscale" onclick="showOverlay('images/installation/tailsacale web console.png')">
+                    <img src="images/installation/install_cloudflared_ip.png" alt="Tailscale" onclick="showOverlay('images/installation/tailsacale web console.png')">
                     <div class="description" onclick="showTextOverlay('外部からのアクセスを可能にするために、Cloudflared(Cloudflare Tunnel)をインストールする')">Cloudflared(Cloudflare Tunnel)</div>
                 </div>
                 <div class="slide">
@@ -42,7 +42,7 @@
                     <div class="description" onclick="showTextOverlay('サイト間VPNを確立し全ノードにコンソールアクセスが可能であることを確認し、PVEクラスタの作成、加入')">Proxmox VE cluster</div>
                 </div>
                 <div class="slide">
-                    <img src="images/installation/PVE cluster.png" alt="Cloudflare" onclick="showOverlay('images/installation/PVE cluster.png')">
+                    <img src="images/installation/ovs-vsctl.png" alt="Cloudflare" onclick="showOverlay('images/installation/PVE cluster.png')">
                     <div class="description" onclick="showTextOverlay('ホスト間用VXLANを構築する。\nVXLANオプションはGUIではなくCUIでしか設定ができなかった')">Open vSwitch VXLAN</div>
                 </div>
                 <div class="slide">
@@ -58,7 +58,7 @@
                     <div class="description" onclick="showTextOverlay('構成したTalos Linux上にKubernetes(以降K8Sと呼ぶ)クラスタを作成する')">Kubernetes</div>
                 </div>
                 <div class="slide">
-                    <img src="images/spec_soft/Tunnel.png" alt="CF Tunnel" onclick="showOverlay('images/spec_soft/Tunnel.png')">
+                    <img src="images/installation/kubectl_get_node.png" alt="CF Tunnel" onclick="showOverlay('images/spec_soft/Tunnel.png')">
                     <div class="description" onclick="showTextOverlay('kubectlコマンドですべてのノードが表示され、`Ready`表示なことを確認する')">K8S</div>
                 </div>
                 <div class="slide">
