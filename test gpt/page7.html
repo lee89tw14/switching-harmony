@@ -76,12 +76,12 @@
 
 
 <!-- Footer: 上/下一頁按鈕 -->
-    <footer class="footer">
-        <div class="page-nav">
-            <button id="prevPageBtn"><a href="page6.html">← 前へ</a></button>
-            <!-- <button id="nextPageBtn">次へ →</button> -->
-        </div>
-    </footer>
+<footer class="footer">
+    <div class="page-nav">
+        <button id="prevPageBtn" disabled>← 前へ</button>
+        <button id="nextPageBtn">次へ →</button>
+    </div>
+</footer>
     
 
     <script src="js/overlay.js"></script>
@@ -89,8 +89,8 @@
     <script src="js/navbar.js"></script>
     <!-- <script src="js/menu.js"></script> -->
     <script>
-        var currentPage = 1; 
-        var totalPages = 20;
+        var currentPage = 7; 
+        var totalPages = 7;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
 

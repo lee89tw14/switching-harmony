@@ -2,7 +2,7 @@
 const menuData = {
     hardware: [
         { text: 'Hardware', link: 'page4.html', icon: 'fas fa-tools' },
-        { text: 'Software', link: 'page5.html', icon: 'fas fa-laptop-code' },
+        // { text: 'Software', link: 'page5.html', icon: 'fas fa-laptop-code' },
         { text: 'IP table（参考用）', link: 'iptable.html', icon: 'fa-solid fa-network-wired' }
     ]
     // hardware: [
