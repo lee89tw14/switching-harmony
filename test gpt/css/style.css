@@ -192,6 +192,9 @@ a {
 .text-block ul {
     margin-bottom: 20px;
 }
+.text-block ul li {
+    font-size: xx-large;
+}
 .text-block p {
     line-height: 1.6;
 }
