@@ -17,39 +17,34 @@
     <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
-        <h1>メンバーズ紹介</h1>
-
-        <!-- 並排圖片展示區 -->
-        <div class="image-gallery">
-            <div class="image-item">
-                <img src="images/members/DSC00278.jpg" onclick="showOverlay('images/members/DSC00278.jpg')">
-                <div class="image-caption" onclick="showTextOverlay('ATM')">桐山</div>
-            </div>
-            <div class="image-item">
-                <img src="images/members/IMG_3879.jpg" onclick="showOverlay('images/members/IMG_3879.jpg')">
-                <div class="image-caption" onclick="showTextOverlay('実行者')">村井</div>
-            </div>
-            <div class="image-item">
-                <img src="images/members/DSC01712_fix.png" onclick="showOverlay('images/members/DSC01712_fix.png')">
-                <div class="image-caption" onclick="showTextOverlay('プランナー')">李</div>
-            </div>
+        <!-- 替換區塊開始: 使用文字區域替換圖片展示區 -->
+        <div class="text-block">
+            <!-- 條列式呈現範例 -->
+            <ul>
+                <li>インフラストラクチャー・アズ・コード（IaC）能力の検証</li>
+                <!-- TerraformおよびArgoCDを用いてクラスタを構築することで、IaCの能力を検証します。 -->
+            </ul>
+            <ul>
+                <li>異なるネットワーク構成および複数拠点におけるProxmox VEクラスターの実現可能性の評価</li>
+                <!-- 異なるネットワークアーキテクチャおよび複数の地理的拠点にまたがるProxmox VEクラスターの安定性と実現可能性を検証します。 -->
+            </ul>
+            <ul>
+                <li>VXLANを用いたVMのデプロイとKubernetesクラスターの構築、高可用性能力の検証</li>
+                <!-- VXLANを導入したProxmox VEクラスターをデプロイし、その上にKubernetesクラスターを構築することで、高可用性（High Availability, HA）能力を検証し、障害発生時にもシステムが継続して稼働できることを確認します。 -->
+            </ul>
+            <ul>
+                <li>様々なネットワーク構成上へのクラスター構築におけるサービス信頼性の向上</li>
+                <!-- 脆弱または不安定なネットワークアーキテクチャ内でクラスターを構築し、全体的なサービスの信頼性を検証し、ビジネスの継続性を確保できるかを実証します。 -->
+            </ul>
+            
+            <!-- 若想以段落方式呈現，可使用<p>標籤 -->
+            <!-- <p>
+                我們的團隊成員各具專長，包括指揮、演奏及音樂理論研究。我們的目標是透過不同領域的專家合作，
+                為聽眾帶來多元而細緻的音樂體驗。
+            </p> -->
         </div>
     </div>
 
-    <!-- text Overlay -->
-    <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
-        <div class="text-content">
-            <button class="close-button" onclick="hideTextOverlay(event)">×</button>
-            <p id="textOverlayContent"></p>
-        </div>
-    </div>
-
-    <!-- 放大圖片 Overlay -->
-    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
-    <!-- 增加關閉按鈕 -->
-        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
-        <img id="overlayImage" src="" alt="放大圖片">
-    </div>
 
 <!-- Footer: 上/下一頁按鈕 -->
     <footer class="footer">
