@@ -137,7 +137,41 @@ a {
     max-height: 100%; /* 設置容器最大高度，避免表格過高佔滿屏幕 */
     overflow-y: auto; /* 垂直方向啟用滾動條 */
     overflow-x: auto; /* 水平方向啟用滾動條 */
-  }
+}
+.photo-table {
+    table-layout: fixed; /* セルの幅を均等に配置 */
+    width: 100%; /* テーブル全体を画面に収める */
+    border-collapse: collapse; /* セル間の余白をなくす */
+}
+
+.photo-table tr td img {
+    display: block;
+    margin: 0 auto; /* 水平方向の中央揃え */
+    max-width: 25%; /* 画像がセルをはみ出さないようにする */
+    height: auto; /* 画像のアスペクト比を維持 */
+    width: 80%; 
+}
+
+.photo-table td {
+    text-align: center; /* セル内コンテンツの中央揃え */
+    vertical-align: middle; /* 垂直方向の中央揃え */
+    word-wrap: break-word; /* テキストが長い場合に折り返す */
+}
+
+.photo-table th, .photo-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    vertical-align: middle;
+}
+
+.photo-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.photo-table tr:hover {
+    background-color: #f1f1f1;
+}
+
 
 /* Text Block 區域 */
 .text-block {
