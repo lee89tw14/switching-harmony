@@ -17,71 +17,17 @@
     <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
-        <!-- 表格 -->
-        <table class="photo-table">
-            <tr>
-                <th>名前</th>
-                <th>所感</th>
-            </tr>
-            <tr>
-                <td><img src="images/members/IMG_3879.jpg" >
-                <td>
-                    <ul>
-                        <li>私は、この卒業制作を通して多くのことを学ぶことができました。私は、この卒業制作を通して多くのことを学ぶことができました。私は、この卒業制作を通して多くのことを学ぶことができました。私は、この卒業制作を通して多くのことを学ぶことができました。私は、この卒業制作を通して多くのことを学ぶことができました。</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="images/members/DSC00278.jpg" >
-                <td>
-                    <ul>
-                        <li>YAMAHA RTX3500</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="images/members/DSC01712_fix.png">
-                <td>
-                    <ul>
-                        <li>Raspberry Pi 5</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-        <!-- 並排圖片展示區
-        <div class="image-gallery">
-            <div class="image-item">
-                <img src="images/members/DSC00278.jpg" onclick="showOverlay('images/members/DSC00278.jpg')">
-                <div class="image-caption">桐山</div>
-            </div>
-            <div class="image-item">
-                <img src="images/members/IMG_3879.jpg" onclick="showOverlay('images/members/IMG_3879.jpg')">
-                <div class="image-caption">村井</div>
-            </div>
-            <div class="image-item">
-                <img src="images/members/DSC01712_fix.png" onclick="showOverlay('images/members/DSC01712_fix.png')">
-                <div class="image-caption">李</div>
-            </div>
-        </div> -->
-        
-
-    </div>
-
-    <!-- 放大圖片 Overlay -->
-    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
-    <!-- 增加關閉按鈕 -->
-        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
-        <img id="overlayImage" src="" alt="放大圖片">
+        <img src="images/genbaneko.jpg" alt="">
     </div>
 
 
 <!-- Footer: 上/下一頁按鈕 -->
-<footer class="footer">
-    <div class="page-nav">
-        <button id="prevPageBtn" disabled>← 前へ</button>
-        <button id="nextPageBtn">次へ →</button>
-    </div>
-</footer>
+    <footer class="footer">
+        <div class="page-nav">
+            <button id="prevPageBtn" disabled>← 前へ</button>
+            <button id="nextPageBtn">次へ →</button>
+        </div>
+    </footer>
     
 
     <script src="js/overlay.js"></script>
@@ -90,7 +36,7 @@
     <!-- <script src="js/menu.js"></script> -->
     <script>
         var currentPage = 7; 
-        var totalPages = 7;
+        var totalPages = 8;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
 

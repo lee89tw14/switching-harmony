@@ -17,9 +17,85 @@
     <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
-        <img src="images/genbaneko.jpg" alt="">
+        <h1>インストール過程</h1>
+        <!-- 圖片 Slider -->
+        <div class="slider-container">
+            <div class="slide-wrapper" id="slideWrapper">
+                <div class="slide">
+                    <img src="images/installation/pve install physical.jpg" alt="Proxmox VE" onclick="showOverlay('images/installation/pve install physical.jpg')">
+                    <div class="description" onclick="showTextOverlay('実機にProxmox VEのインストールを行う')">Proxmox VE</div>
+                </div>
+                <div class="slide">
+                    <img src="images/installation/cephfs.png" alt="Proxmox VE" onclick="showOverlay('images/installation/cephfs.png')">
+                    <div class="description" onclick="showTextOverlay('K8Sのストレージを永続化するために、Proxmox VE上でCephクラスタを作成し分散ストレージシステムを構築する')">CephFS</div>
+                </div>
+                <div class="slide">
+                    <img src="images/installation/tailsacale web console.png" alt="Tailscale" onclick="showOverlay('images/installation/tailsacale web console.png')">
+                    <div class="description" onclick="showTextOverlay('Proxmoxセットアップ後、tailscaledのインストールとネットワーク参加でサイト間VPN接続を確立する')">Tailscale</div>
+                </div>
+                <div class="slide">
+                    <img src="images/installation/install_cloudflared_ip.png" alt="Tailscale" onclick="showOverlay('images/installation/install_cloudflared_ip.png')">
+                    <div class="description" onclick="showTextOverlay('外部からのアクセスを可能にするために、Cloudflared(Cloudflare Tunnel)をインストールする')">Cloudflared(Cloudflare Tunnel)</div>
+                </div>
+                <div class="slide">
+                    <img src="images/installation/PVE cluster.png" alt="Cloudflare" onclick="showOverlay('images/installation/PVE cluster.png')">
+                    <div class="description" onclick="showTextOverlay('サイト間VPNを確立し全ノードにコンソールアクセスが可能であることを確認し、PVEクラスタの作成、加入')">Proxmox VE cluster</div>
+                </div>
+                <div class="slide">
+                    <img src="images/installation/ovs-vsctl.png" alt="Cloudflare" onclick="showOverlay('images/installation/ovs-vsctl.png')">
+                    <div class="description" onclick="showTextOverlay('ホスト間用VXLANを構築する。\nVXLANオプションはGUIではなくCUIでしか設定ができなかった')">Open vSwitch VXLAN</div>
+                </div>
+                <div class="slide">
+                    <img src="images/installation/terraform_demo.gif" alt="Cloudflare" onclick="showOverlay('images/installation/terraform_demo.gif')">
+                    <div class="description" onclick="showTextOverlay('Terraformを用いてTalos LinuxのVMを展開する。')">Terraform</div>
+                </div>
+                <div class="slide">
+                    <img src="images/installation/taloslinux.png" alt="Cloudflare" onclick="showOverlay('images/installation/taloslinux.png')">
+                    <div class="description" onclick="showTextOverlay('展開したTalos Linuxのコンソールを確認しIP設定がされていることを確認する。')">Talos Linux</div>
+                </div>
+                <div class="slide">
+                    <img src="images/installation/k8s_sh.png" alt="CF Tunnel" onclick="showOverlay('images/installation/k8s_sh.png')">
+                    <div class="description" onclick="showTextOverlay('構成したTalos Linux上にKubernetes(以降K8Sと呼ぶ)クラスタを作成する')">Kubernetes</div>
+                </div>
+                <div class="slide">
+                    <img src="images/installation/kubectl_get_node.png" alt="CF Tunnel" onclick="showOverlay('images/installation/kubectl_get_node.png')">
+                    <div class="description" onclick="showTextOverlay('kubectlコマンドですべてのノードが表示され、`Ready`表示なことを確認する')">K8S</div>
+                </div>
+                <div class="slide">
+                    <img src="images/installation/argocd.png" alt="CF Tunnel" onclick="showOverlay('images/spec_soft/Tunnel.png')">
+                    <div class="description" onclick="showTextOverlay('K8Sクラスタ上にArgoCDというGitOps及びCI/CD環境を構築するアプリケーションをデプロイし、\n GitOps環境を構築する。')">ArgoCD</div>
+                </div>
+                <div class="slide">
+                    <img src="images/installation/mc_argo.gif" alt="CF Tunnel" onclick="showOverlay('images/spec_soft/Tunnel.png')">
+                    <div class="description" onclick="showTextOverlay('今回の外部向けサービスの一つであるMinecraft ServerをArgoCDを用いて構築する')">Minecraft Server</div>
+                </div>
+                <div class="slide">
+                    <img src="images/installation/cf_daemon.png" alt="CF Tunnel" onclick="showOverlay('images/spec_soft/Tunnel.png')">
+                    <div class="description" onclick="showTextOverlay('Minecraft Serverを公開するためCloudflaredだけでは不可能であるため、\nProxmoxにcloudflaredをインストールし自身にポートフォーワードした後に、\nPVEのポートをルータで開放しそのグローバルIPをTCPShieldでプロキシすることで、\nCloudflaredで外部からTCP接続ができない問題を解決するとともに、\nCloudflaredを使用しない場合の外部から攻撃もTCPShieldで阻止できる。')">Cloudflare Access</div>
+                </div>
+                <div class="slide">
+                    <img src="images/spec_soft/www-service.png" alt="CF Tunnel" onclick="showOverlay('images/spec_soft/Tunnel.png')">
+                    <div class="description" onclick="showTextOverlay('本サイトを公開しているnginxアプリケーションもArgoCDを用いて構築し、\ngit-syncというツールを使用してGitHub上のHTMLやCSSファイルが変更されたのを検知すると、自動的にサイトのページに適用される')">nginx+git-sync</div>
+                </div>
+            </div>
+            <div class="prev" onclick="prevSlide()">&lt;</div>
+            <div class="next" onclick="nextSlide()">&gt;</div>
+        </div>
     </div>
 
+    <!-- text Overlay -->
+    <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
+        <div class="text-content">
+            <button class="close-button" onclick="hideTextOverlay(event)">×</button>
+            <p id="textOverlayContent"></p>
+        </div>
+    </div>
+    <!-- 放大圖片 Overlay -->
+    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
+    <!-- 增加關閉按鈕 -->
+        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
+        <img id="overlayImage" src="" alt="放大圖片">
+    </div>
 
 <!-- Footer: 上/下一頁按鈕 -->
     <footer class="footer">
@@ -36,10 +112,9 @@
     <!-- <script src="js/menu.js"></script> -->
     <script>
         var currentPage = 6; 
-        var totalPages = 7;
+        var totalPages = 8;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
-
         function updatePageNavButtons() {
             if (currentPage <= 1) {
                 prevPageBtn.disabled = true;
@@ -53,21 +128,17 @@
                 nextPageBtn.disabled = false;
             }
         }
-
         updatePageNavButtons();
-
         prevPageBtn.addEventListener('click', function() {
             if (currentPage > 1) {
                 window.location.href = 'page' + (currentPage - 1) + '.html';
             }
         });
-
         nextPageBtn.addEventListener('click', function() {
             if (currentPage < totalPages) {
                 window.location.href = 'page' + (currentPage + 1) + '.html';
             }
         });
-
         document.addEventListener('keydown', function(event) {
             if (event.key === 'ArrowLeft') {
                 if (currentPage > 1) {
