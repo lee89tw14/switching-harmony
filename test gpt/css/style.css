@@ -147,7 +147,7 @@ a {
 .photo-table tr td img {
     display: block;
     margin: 0 auto; /* 水平方向の中央揃え */
-    max-width: 25%; /* 画像がセルをはみ出さないようにする */
+    max-width: 15%; /* 画像がセルをはみ出さないようにする */
     height: auto; /* 画像のアスペクト比を維持 */
     width: 80%; 
 }
