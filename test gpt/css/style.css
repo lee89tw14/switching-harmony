@@ -182,6 +182,7 @@ a {
     height: 100%; /* 必要に応じて調整 */
     text-align: center;
     margin: 0 auto;
+    max-width: 1500px;
 
 }
 .text-block ul {
