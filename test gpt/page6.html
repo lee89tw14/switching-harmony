@@ -66,7 +66,7 @@
                     <div class="description" onclick="showTextOverlay('K8Sクラスタ上にArgoCDというGitOps及びCI/CD環境を構築するアプリケーションをデプロイし、\n GitOps環境を構築する。')">ArgoCD</div>
                 </div>
                 <div class="slide">
-                    <img src="images/installation/mc_argo.gif" alt="CF Tunnel" onclick="showOverlay('images/spec_soft/Tunnel.png')">
+                    <img src="images/installation/minecraft_installation.png" alt="CF Tunnel" onclick="showOverlay('images/installation/minecraft_installation.png')">
                     <div class="description" onclick="showTextOverlay('今回の外部向けサービスの一つであるMinecraft ServerをArgoCDを用いて構築する')">Minecraft Server</div>
                 </div>
                 <div class="slide">
@@ -74,7 +74,7 @@
                     <div class="description" onclick="showTextOverlay('Minecraft Serverを公開するためCloudflaredだけでは不可能であるため、\nProxmoxにcloudflaredをインストールし自身にポートフォーワードした後に、\nPVEのポートをルータで開放しそのグローバルIPをTCPShieldでプロキシすることで、\nCloudflaredで外部からTCP接続ができない問題を解決するとともに、\nCloudflaredを使用しない場合の外部から攻撃もTCPShieldで阻止できる。')">Cloudflare Access</div>
                 </div>
                 <div class="slide">
-                    <img src="images/spec_soft/www-service.png" alt="CF Tunnel" onclick="showOverlay('images/spec_soft/Tunnel.png')">
+                    <img src="images/installation/git-sync_logs.png" alt="CF Tunnel" onclick="showOverlay('images/installation/git-sync_logs.png')">
                     <div class="description" onclick="showTextOverlay('本サイトを公開しているnginxアプリケーションもArgoCDを用いて構築し、\ngit-syncというツールを使用してGitHub上のHTMLやCSSファイルが変更されたのを検知すると、自動的にサイトのページに適用される')">nginx+git-sync</div>
                 </div>
             </div>
