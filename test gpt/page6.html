@@ -23,23 +23,23 @@
             <div class="slide-wrapper" id="slideWrapper">
                 <div class="slide">
                     <img src="images/installation/pve install physical.jpg" alt="Proxmox VE" onclick="showOverlay('images/installation/pve install physical.jpg')">
-                    <div class="description" onclick="showTextOverlay('実機にProxmox VEのインストールを行う')">Proxmox VE</div>
+                    <div class="description" onclick="showTextOverlay('実機にProxmox VEの構築と')">Proxmox VE</div>
                 </div>
                 <div class="slide">
                     <img src="images/installation/tailsacale web console.png" alt="Tailscale" onclick="showOverlay('images/installation/tailsacale web console.png')">
                     <div class="description" onclick="showTextOverlay('Proxmoxセットアップ後、tailscaledのインストールとネットワーク参加でサイト間VPN接続を確立する')">Tailscale</div>
                 </div>
                 <div class="slide">
-                    <img src="images/installation/install_cloudflared_ip.png" alt="Tailscale" onclick="showOverlay('images/installation/install_cloudflared_ip.png')">
+                    <img src="images/installation/cloudflare_webpanel.png" alt="Tailscale" onclick="showOverlay('images/installation/cloudflare_webpanel.png')">
                     <div class="description" onclick="showTextOverlay('外部からのアクセスを可能にするために、Cloudflared(Cloudflare Tunnel)をインストールする')">Cloudflared(Cloudflare Tunnel)</div>
+                </div>
+                <div class="slide">
+                    <img src="images/genbaneko.jpg" alt="CF Access" onclick="showOverlay('images/installation/')">
+                    <div class="description" onclick="showTextOverlay('')">Cloudflare Access</div>
                 </div>
                 <div class="slide">
                     <img src="images/installation/PVE cluster.png" alt="Cloudflare" onclick="showOverlay('images/installation/PVE cluster.png')">
                     <div class="description" onclick="showTextOverlay('サイト間VPNを確立し全ノードにコンソールアクセスが可能であることを確認し、PVEクラスタの作成、加入')">Proxmox VE cluster</div>
-                </div>
-                <div class="slide">
-                    <img src="images/installation/cephfs.png" alt="Proxmox VE" onclick="showOverlay('images/installation/cephfs.png')">
-                    <div class="description" onclick="showTextOverlay('K8Sのストレージを永続化するために、Proxmox VE上でCephクラスタを作成し分散ストレージシステムを構築する')">CephFS</div>
                 </div>
                 <div class="slide">
                     <img src="images/installation/ovs-vsctl.png" alt="Cloudflare" onclick="showOverlay('images/installation/ovs-vsctl.png')">
@@ -68,18 +68,6 @@
                 <div class="slide">
                     <img src="images/installation/argocd.png" alt="CF Tunnel" onclick="showOverlay('images/installation/argocd.png')">
                     <div class="description" onclick="showTextOverlay('K8Sクラスタ上にArgoCDというGitOps及びCI/CD環境を構築するアプリケーションをデプロイし、\n GitOps環境を構築する。')">ArgoCD</div>
-                </div>
-                <div class="slide">
-                    <img src="images/installation/minecraft_installation.png" alt="CF Tunnel" onclick="showOverlay('images/installation/minecraft_installation.png')">
-                    <div class="description" onclick="showTextOverlay('今回の外部向けサービスの一つであるMinecraft ServerをArgoCDを用いて構築する')">Minecraft Server</div>
-                </div>
-                <div class="slide">
-                    <img src="images/installation/cf_daemon.png" alt="CF Tunnel" onclick="showOverlay('images/installation/cf_daemon.png')">
-                    <div class="description" onclick="showTextOverlay('Minecraft Serverを公開するためCloudflaredだけでは不可能であるため、\nProxmoxにcloudflaredをインストールし自身にポートフォーワードした後に、\nPVEのポートをルータで開放しそのグローバルIPをTCPShieldでプロキシすることで、\nCloudflaredで外部からTCP接続ができない問題を解決するとともに、\nCloudflaredを使用しない場合の外部から攻撃もTCPShieldで阻止できる。')">Cloudflare Access</div>
-                </div>
-                <div class="slide">
-                    <img src="images/installation/git-sync_logs.png" alt="CF Tunnel" onclick="showOverlay('images/installation/git-sync_logs.png')">
-                    <div class="description" onclick="showTextOverlay('本サイトを公開しているnginxアプリケーションもArgoCDを用いて構築し、\ngit-syncというツールを使用してGitHub上のHTMLやCSSファイルが変更されたのを検知すると、自動的にサイトのページに適用される')">nginx+git-sync</div>
                 </div>
             </div>
             <div class="prev" onclick="prevSlide()">&lt;</div>
