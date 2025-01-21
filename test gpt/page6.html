@@ -22,48 +22,12 @@
         <div class="slider-container">
             <div class="slide-wrapper" id="slideWrapper">
                 <div class="slide">
-                    <img src="images/installation/tailsacale web console.png" alt="Tailscale" onclick="showOverlay('images/installation/tailsacale web console.png')">
-                    <div class="description" onclick="showTextOverlay('Proxmoxセットアップ後、tailscaledのインストールとネットワーク参加でサイト間VPN接続を確立する')">Tailscale</div>
-                </div>
-                <div class="slide">
-                    <img src="images/installation/cloudflare_webpanel.png" alt="Tailscale" onclick="showOverlay('images/installation/cloudflare_webpanel.png')">
-                    <div class="description" onclick="showTextOverlay('外部からのアクセスを可能にするために、Cloudflared(Cloudflare Tunnel)をインストールする')">Cloudflared(Cloudflare Tunnel)</div>
-                </div>
-                <div class="slide">
                     <img src="images/installation/cloudflare_access_auth.gif" alt="CF Access" onclick="showOverlay('images/installation/cloudflare_access_auth.gif')">
                     <div class="description" onclick="showTextOverlay('')">Cloudflare Access</div>
                 </div>
                 <div class="slide">
-                    <img src="images/installation/PVE cluster.png" alt="Cloudflare" onclick="showOverlay('images/installation/PVE cluster.png')">
-                    <div class="description" onclick="showTextOverlay('サイト間VPNを確立し全ノードにコンソールアクセスが可能であることを確認し、PVEクラスタの作成、加入')">Proxmox VE cluster</div>
-                </div>
-                <div class="slide">
-                    <img src="images/installation/ovs-vsctl.png" alt="Cloudflare" onclick="showOverlay('images/installation/ovs-vsctl.png')">
-                    <div class="description" onclick="showTextOverlay('ホスト間用VXLANを構築する。\nVXLANオプションはGUIではなくCUIでしか設定ができなかった')">Open vSwitch VXLAN</div>
-                </div>
-                <div class="slide">
                     <img src="images/installation/terraform_demo.gif" alt="Cloudflare" onclick="showOverlay('images/installation/terraform_demo.gif')">
                     <div class="description" onclick="showTextOverlay('Terraformを用いてTalos LinuxのVMを展開する。')">Terraform</div>
-                </div>
-                <div class="slide">
-                    <img src="images/installation/taloslinux.png" alt="Cloudflare" onclick="showOverlay('images/installation/taloslinux.png')">
-                    <div class="description" onclick="showTextOverlay('展開したTalos Linuxのコンソールを確認しIP設定がされていることを確認する。')">Talos Linux</div>
-                </div>
-                <div class="slide">
-                    <img src="images/installation/k8s_sh.png" alt="CF Tunnel" onclick="showOverlay('images/installation/k8s_sh.png')">
-                    <div class="description" onclick="showTextOverlay('構成したTalos Linux上にKubernetes(以降K8Sと呼ぶ)クラスタを作成する')">Kubernetes</div>
-                </div>
-                <div class="slide">
-                    <img src="images/installation/kubectl_get_node.png" alt="CF Tunnel" onclick="showOverlay('images/installation/kubectl_get_node.png')">
-                    <div class="description" onclick="showTextOverlay('kubectlコマンドですべてのノードが表示され、`Ready`表示なことを確認する')">K8S</div>
-                </div>
-                <div class="slide">
-                    <img src="images/installation/helm_install.png" alt="Helm" onclick="showOverlay('images/installation/helm_install.png')">
-                    <div class="description" onclick="showTextOverlay('Linuxで言うyumやdnf,apt等のパッケージマネージャのようなもので \n K8S上に展開するアプリケーションのインストールをマニフェストではなくコマンドラインから可能となる')">Helm</div>
-                </div>
-                <div class="slide">
-                    <img src="images/installation/argocd.png" alt="CF Tunnel" onclick="showOverlay('images/installation/argocd.png')">
-                    <div class="description" onclick="showTextOverlay('K8Sクラスタ上にArgoCDというGitOps及びCI/CD環境を構築するアプリケーションをデプロイし、\n GitOps環境を構築する。')">ArgoCD</div>
                 </div>
             </div>
             <div class="prev" onclick="prevSlide()">&lt;</div>
