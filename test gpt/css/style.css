@@ -78,8 +78,8 @@ html, body {
     box-sizing: border-box;
 }
 .wrapper h1 {
-    font-size: 6vh;
-    margin: 10px 0;
+    font-size: 5vh;
+    margin: 5px 0;
 }
 h1 {
     text-align: center;
