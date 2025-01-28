@@ -86,6 +86,63 @@ h1 {
     color: #333;
     margin-bottom: 20px;
 }
+
+/* spec table */
+
+.spec-table table {
+    overflow-x: auto; /* Adds horizontal scroll if content overflows */
+    border-collapse: collapse;
+    width: 100%;
+    background: #ffffff;
+    width: 100%; /* Makes the table take up the full width available */
+    font-size: 3vh;
+}
+
+.spec-table table tr td i {
+    margin-left: 5px;
+    text-align: center;
+}
+
+.spec-table th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 12px;
+    vertical-align: center;
+}
+
+.spec-table th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.spec-table td a{
+    text-align: center;
+    vertical-align: middle;
+}
+.spec-table td ul{
+    text-align:initial;
+}
+.spec-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.spec-table tr:hover {
+    background-color: #f1f1f1;
+}
+.spec-table ul {
+    margin: 0;
+    padding-left: 20px;
+    
+}
+.spec-table a {
+    text-decoration: none;
+    color: inherit; /* 繼承文字顏色 */
+    display: block;
+    height: 100%; /* 讓整個區域可點擊 */
+    width: 100%;
+}
+
+/* default */
+
 table {
     overflow-x: auto; /* Adds horizontal scroll if content overflows */
     border-collapse: collapse;
