@@ -17,81 +17,46 @@
     <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
-        <!-- 表格 -->
-        <table class="photo-table">
-            <tr>
-                <th>名前</th>
-                <th>所感</th>
-            </tr>
-            <tr>
-                <td><img src="images/members/IMG_3879.jpg">
-                    村井</td>
-                <td>
-                    <ul>
-                        <li>本制作を通して，特にコンテナやVXLANへの理解を深めることができた．その中でもKubernetesはコンテナ技術を使う点は似ているが，コンテナオーケストレーションという新しい考え方はとても興味をそそられ，制作に没頭していた．
-                            　私はもともとサーバ系の技術全般に興味関心があり，その過程の中でネットワークや仮想化などの技術にも触れていた．しかし，今回の制作ではネットワークが違う複数拠点に分散したノードを統合的に管理するという制作なため，これまで以上にドキュメントなどを読み込んで学習と検証を繰り返す場面が多くあった．Kubernetesの概念を理解することだけではなく，VXLANのようなネットワーク技術との連携についても学ぶことで，クラウドインフラのあり方を知ることができた．
-                            　またこの制作を通して，知識の理解度向上と共に仲間と協力して物事を成し遂げるという貴重な経験ができ，非常に意味のある卒業制作となった．
-                            </li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="images/members/DSC00278.jpg">
-                    桐山</td>
-                <td>
-                    <ul>
-                        <li>この卒業制作を通して，分散型データセンタの構築における最新の技術とアプローチについて深く学ぶことがで出来た.特に,Proxmox VEやKubernetes,Tailscale等を統合した環境の構築を通して,セキュアかつ効率的な環境とはどのような物であるかを理解した．また,Iinfrastructure as Codeの活用により,運用の自動化と管理の効率化が図れるという学びは,今後の実務でも大いに役立つと感じた．チームメンバーとの協力を通じて，技術的な知識だけでなく，協働の重要性も実感した．この卒業制作は私にとって，技術向上だけでなく,協調性や実践力を育む,非常に充実した経験となった．
-                            </li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="images/members/DSC01712_fix.png">
-                    李</td>
-                <td>
-                    <ul>
-                        <li>本卒業制作では，これまでに学んできた保守運用知識を活用し，新しいシステムを構築するとともに，主流の高可用性サービスシステムを統合しました．この中で，最も大きな収穫となったのは，他の人と協力してシステムを構築する経験を得られたことです．
-                            お互いに議論しながらアーキテクチャを確認する過程で，それぞれ得意分野が異なることに気づきました．お互いの強みを補完し合うことで，協力の効果を最大化できることを学びました．また，このシステムを構築する過程で，個人プロジェクトとチームプロジェクトの違いから生じるさまざまな問題を実際に体験することができました．
-                            このような体験を通じて，今回の作業は非常に意義深いものとなったと感じています．
-                            </li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-        <!-- 並排圖片展示區
-        <div class="image-gallery">
-            <div class="image-item">
-                <img src="images/members/DSC00278.jpg" onclick="showOverlay('images/members/DSC00278.jpg')">
-                <div class="image-caption">桐山</div>
+        <div class="slider-container">
+            <div class="slide-wrapper" id="slideWrapper">
+                <div class="slide">
+                    <img src="images/result/slide/slide50.jpeg" alt="まとめ１" onclick="showOverlay('images/result/slide/slide50.jpeg')">
+                    <!-- <div class="description"><a href="まとめ１" target="_blank">まとめ１</a> -->
+                    <!-- </div> -->
+                </div>
+                <div class="slide">
+                    <img src="images/result/slide/slide51.jpeg" alt="まとめ２" onclick="showOverlay('images/result/slide/slide51.jpeg')">
+                    <!-- <div class="description"><a href="まとめ２" target="_blank">まとめ２</a> -->
+                    <!-- </div> -->
+                </div>
             </div>
-            <div class="image-item">
-                <img src="images/members/IMG_3879.jpg" onclick="showOverlay('images/members/IMG_3879.jpg')">
-                <div class="image-caption">村井</div>
-            </div>
-            <div class="image-item">
-                <img src="images/members/DSC01712_fix.png" onclick="showOverlay('images/members/DSC01712_fix.png')">
-                <div class="image-caption">李</div>
-            </div>
-        </div> -->
-        
-
+            <div class="prev" onclick="prevSlide()">&lt;</div>
+            <div class="next" onclick="nextSlide()">&gt;</div>
+        </div>
     </div>
 
-    <!-- 放大圖片 Overlay -->
-    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
-    <!-- 增加關閉按鈕 -->
-        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
-        <img id="overlayImage" src="" alt="放大圖片">
-    </div>
+        <!-- text Overlay -->
+        <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
+            <div class="text-content">
+                <button class="close-button" onclick="hideTextOverlay(event)">×</button>
+                <p id="textOverlayContent"></p>
+            </div>
+        </div>
+        <!-- 放大圖片 Overlay -->
+        <div class="overlay" id="overlay" onclick="hideOverlay(event)">
+        <!-- 增加關閉按鈕 -->
+            <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
+            <img id="overlayImage" src="" alt="放大圖片">
+        </div>
 
 
 <!-- Footer: 上/下一頁按鈕 -->
-<footer class="footer">
-    <div class="page-nav">
-        <button id="prevPageBtn" disabled>← 前へ</button>
-        <button id="nextPageBtn">次へ →</button>
-    </div>
-</footer>
+    <footer class="footer">
+        <div class="page-nav">
+            <button id="prevPageBtn" disabled>← 前へ</button>
+            <button id="nextPageBtn">次へ →</button>
+        </div>
+    </footer>
     
 
     <script src="js/overlay.js"></script>
@@ -99,7 +64,7 @@
     <script src="js/navbar.js"></script>
     <!-- <script src="js/menu.js"></script> -->
     <script>
-        var currentPage = 8; 
+        var currentPage = 7; 
         var totalPages = 8;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
@@ -146,3 +111,4 @@
     </script>
 </body>
 </html>
+
