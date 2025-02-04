@@ -12,6 +12,10 @@ const menuData = {
         { text: 'What', link: 'page5.html', icon: 'fa-solid fa-circle-question' },
         { text: 'Example', link: 'page6.html', icon: 'fa-solid fa-file-lines' }
     ],
+    end: [
+        { text: 'End1', link: 'page11.html' },
+        { text: 'End2', link: 'page12.html' }
+    ]
     // software: [
     //     { text: 'IDE', link: 'ide.html', icon: 'fas fa-code' },
     //     { text: 'Dev Tools', link: 'devtools.html', icon: 'fas fa-tools' },
