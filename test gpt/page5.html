@@ -17,93 +17,45 @@
     <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
-        <h1>使用ハードウェア一覧</h1>
-        <!-- 表格 -->
-        <div class="spec-table">
-        <table>
-            <tr>
-                <th>環境</th>
-                <th>ネットワーク設備</th>
-                <th>サーバーspec</th>
-            </tr>
-            <tr>
-                <td><a href="murai_spec.html">村井宅ラボ<i class="fa-solid fa-images"></i></a></td>
-                <td>
-                    <ul>
-                        <li>Vyos</li>
-                        <li>Allied-Telesis SH510-28GTX</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>HPE ProLiant DL360 Gen9</li>
-                        <li>Xeon E5-2690v4 *2</li>
-                        <li>DDR4 2400T ECC 8GB *8</li>
-                        <li>SSD 512GB (RAID1)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><a href="kiriyama_spec.html">桐山宅ラボ<i class="fa-solid fa-images"></i></a></td>
-                <td>
-                    <ul>
-                        <li>YAMAHA RTX3500</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>HPE Proliant ML350 Gen9</li>
-                        <li>Xeon E5-2680v4 *2</li>
-                        <li>DDR4 2133 ECC 8GB *8</li>
-                        <li>SSD 2TB</li>
-                        <li>HDD 900GB RAID1</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><a href="li_spec.html">李宅ラボ<i class="fa-solid fa-images"></i></a></td>
-                <td>
-                    <ul>
-                        <li>Raspberry Pi 5</li>
-                        <li>OpenWRT</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>HPI Pavillion</li>
-                        <li>Core i7-8750H</li>
-                        <li>DDR4 2400 16GB x2</li>
-                        <li>SSD 2TB</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-    </div>
-        <!-- 並排圖片展示區
-        <div class="image-gallery">
-            <div class="image-item">
-                <img src="images/members/DSC00278.jpg" onclick="showOverlay('images/members/DSC00278.jpg')">
-                <div class="image-caption">桐山</div>
+        <!-- 替換區塊開始: 使用文字區域替換圖片展示區 -->
+        <div class="what-container">
+            <div class="orange-circle">
+                <h2>何を作る？</h2>
             </div>
-            <div class="image-item">
-                <img src="images/members/IMG_3879.jpg" onclick="showOverlay('images/members/IMG_3879.jpg')">
-                <div class="image-caption">村井</div>
+            
+            <div class="content">
+                <p class="description">
+                    3つのサーバーを<span class="highlight">コード</span>で管理し、運用します。
+                </p>
+                
+                <p class="sub-description">
+                    端的に言うと、、、
+                </p>
+                
+                <p class="iac-text">
+                    <span class="underline">IaC(Infrastructure as Code)</span>
+                </p>
+                
+                <p class="datacenter-text">
+                    かつ、インターネットを介して拠点間を接続し、
+                    <span class="highlight-red">統合分散型データセンター</span>を構築します。
+                </p>
             </div>
-            <div class="image-item">
-                <img src="images/members/DSC01712_fix.png" onclick="showOverlay('images/members/DSC01712_fix.png')">
-                <div class="image-caption">李</div>
-            </div>
-        </div> -->
         
-
+            <div class="blue-decoration">
+                <svg width="100" height="50">
+                    <path d="M 0 40 Q 50 0 100 40" stroke="#0088cc" stroke-width="3" stroke-dasharray="5,5" fill="none"/>
+                </svg>
+            </div>
+        </div>
     </div>
 
-    <!-- 放大圖片 Overlay -->
     <div class="overlay" id="overlay" onclick="hideOverlay(event)">
-    <!-- 增加關閉按鈕 -->
-        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
-        <img id="overlayImage" src="" alt="放大圖片">
+        <!-- 增加關閉按鈕 -->
+            <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
+            <img id="overlayImage" src="" alt="放大圖片">
     </div>
+
 
 <!-- Footer: 上/下一頁按鈕 -->
     <footer class="footer">
@@ -120,7 +72,7 @@
     <!-- <script src="js/menu.js"></script> -->
     <script>
         var currentPage = 5; 
-        var totalPages = 8;
+        var totalPages = 11;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
 
@@ -165,4 +117,74 @@
         }); 
     </script>
 </body>
+
+<style>
+    .what-container {
+        display: flex;
+        width: 100%;
+        /* max-width: 1200px; */
+        align-items: center;
+        position: relative;
+    }
+    
+    .orange-circle {
+        background-color: #F26522;
+        border-radius: 0% 100% 100% 0;
+        padding: 40px;
+        width: 350px;
+        height: 400px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .orange-circle h2 {
+        color: white;
+        font-size: 40pt;
+        margin-left: 20px;
+    }
+    
+    .content {
+        flex: 1;
+        padding-left: 40px;
+    }
+    
+    .description {
+        font-size: 35pt;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    
+    .highlight {
+        background-color: #cccccc;
+    }
+    
+    .sub-description {
+        font-size: 28pt;
+        margin-bottom: 10px;
+    }
+
+    .iac-text {
+        font-size: 28pt;
+        margin-bottom: 20px;
+    }
+    
+    .underline {
+        text-decoration: underline;
+        color: #FF0000;
+    }
+    
+    .datacenter-text {
+        font-size: 28pt;
+    }
+    
+    .highlight-red {
+        color: #FF0000;
+    }
+    
+    .blue-decoration {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+</style>
 </html>

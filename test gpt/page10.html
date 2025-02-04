@@ -17,27 +17,42 @@
     <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
-        <!-- 替換區塊開始: 使用文字區域替換圖片展示區 -->
-        <div class="purpose-container">
-            <h2 class="purpose-title">制作の目的</h2>
-            
-            <ul class="purpose-list">
-                <li>インフラストラクチャー・アズ・コード(IaC)能力の検証</li>
-                
-                <li>異なるネットワーク構成および複数拠点におけるProxmox VEクラスターの実現可能性の評価</li>
-                
-                <li>VXLANを用いたVMのデプロイとKubernetesクラスターの構築、高可用性能力の検証</li>
-                
-                <li>様々なネットワーク構成上へのクラスター構築におけるサービス信頼性の向上</li>
-            </ul>
+        <h1>展開サービス</h1>
+        <div class="slider-container">
+            <div class="slide-wrapper" id="slideWrapper">
+                <div class="slide">
+                    <img src="images/result/Web.png" alt="Webサービス" onclick="showOverlay('images/result/Web.png')">
+                    <div class="description"><a href="https://www.tokyo-skills.jp" target="_blank">Webサービス</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/result/minecraft_stresstest.jpeg" alt="Minecraft Server" onclick="showOverlay('images/result/minecraft_stresstest.jpeg')">
+                    <div class="description" onclick="showTextOverlay('mctest.tokyo-skills.jp \n Ver.1.21.4')">Minecraft サーバ</div>
+                </div>
+                <div class="slide">
+                    <img src="images/result/ops.png" alt="Minecraft Server" onclick="showOverlay('images/result/ops.png')">
+                    <div class="description"><a href="https://ops.tokyo-skills.jp" target="_blank">K8S運用状況監視</a>
+                    </div>
+                </div>
+            </div>
+            <div class="prev" onclick="prevSlide()">&lt;</div>
+            <div class="next" onclick="nextSlide()">&gt;</div>
         </div>
     </div>
-    
-    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
+
+        <!-- text Overlay -->
+        <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
+            <div class="text-content">
+                <button class="close-button" onclick="hideTextOverlay(event)">×</button>
+                <p id="textOverlayContent"></p>
+            </div>
+        </div>
+        <!-- 放大圖片 Overlay -->
+        <div class="overlay" id="overlay" onclick="hideOverlay(event)">
         <!-- 增加關閉按鈕 -->
             <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
             <img id="overlayImage" src="" alt="放大圖片">
-    </div>
+        </div>
 
 
 <!-- Footer: 上/下一頁按鈕 -->
@@ -54,7 +69,7 @@
     <script src="js/navbar.js"></script>
     <!-- <script src="js/menu.js"></script> -->
     <script>
-        var currentPage = 3; 
+        var currentPage = 10; 
         var totalPages = 11;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
@@ -100,37 +115,4 @@
         }); 
     </script>
 </body>
-
-<style>
-    .purpose-container {
-        padding: 20px;
-        margin: 20px;
-        font-size: 28pt;
-    }
-    
-    .purpose-title {
-        font-size: 54pt;
-        margin-bottom: 20px;
-        border-left: 3px solid #0088cc;
-        padding-left: 10px;
-    }
-    
-    .purpose-list {
-        list-style-type: none;
-        padding: 0;
-    }
-    
-    .purpose-list li {
-        margin-bottom: 15px;
-        padding-left: 20px;
-        position: relative;
-    }
-    
-    .purpose-list li:before {
-        content: "•";
-        position: absolute;
-        left: 0;
-        color: #0088cc;
-    }
-</style>
 </html>

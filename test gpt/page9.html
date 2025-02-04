@@ -17,7 +17,6 @@
     <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
-<<<<<<< HEAD
         <h1>構築/各種説明</h1>
         <!-- 圖片 Slider -->
         <div class="slider-container">
@@ -102,7 +101,7 @@
                     <!-- <div class="description" >IaC</div> -->
                 </div>
                 <div class="slide">
-                    <iframe width="90%" height="100%" src="https://www.youtube.com/embed/R4KJ14YajC8" title="video01 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="90%" height="100%" src="https://www.youtube.com/embed/QHnQU9WvhrY" title="video01 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <!-- <div class="description" >VXLAN</div> -->
                 </div>
                 <div class="slide">
@@ -116,43 +115,26 @@
                 <div class="slide">
                     <iframe width="90%" height="100%" src="https://www.youtube.com/embed/PpTI1Vnmu48" title="video01 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <!-- <div class="description" >VXLAN</div> -->
-=======
-        <!-- 替換區塊開始: 使用文字區域替換圖片展示區 -->
-        <div class="example-container">
-            <div class="example-header">
-                <div class="orange-circle">
-                    <h2><br/>具体例</h2>
                 </div>
             </div>
-            
-            <div class="content">
-                <div class="benefit-box purple">
-                    <h3>IaCによる効率化</h3>
-                    <p>稼働するサービスが大量の仮想マシン、設定を必要とする場合、作業コストの大幅な軽減</p>
-                </div>
-        
-                <div class="benefit-box blue">
-                    <h3>クラウドと同等の堅牢さ</h3>
-                    <p>重要なサービスを稼働させる事が可能に</p>
-                </div>
-        
-                <div class="benefit-box green">
-                    <h3>高可用性の確保</h3>
-                    <p>リソースの効率的な活用や、サービスの拡張が容易に</p>
->>>>>>> refs/remotes/origin/main
-                </div>
-            </div>
+            <div class="prev" onclick="prevSlide()">&lt;</div>
+            <div class="next" onclick="nextSlide()">&gt;</div>
         </div>
-
-
-
     </div>
+
+    <!-- text Overlay -->
+    <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
+        <div class="text-content">
+            <button class="close-button" onclick="hideTextOverlay(event)">×</button>
+            <p id="textOverlayContent"></p>
+        </div>
+    </div>
+    <!-- 放大圖片 Overlay -->
     <div class="overlay" id="overlay" onclick="hideOverlay(event)">
-        <!-- 增加關閉按鈕 -->
-            <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
-            <img id="overlayImage" src="" alt="放大圖片">
+    <!-- 增加關閉按鈕 -->
+        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
+        <img id="overlayImage" src="" alt="放大圖片">
     </div>
-
 
 <!-- Footer: 上/下一頁按鈕 -->
     <footer class="footer">
@@ -168,11 +150,10 @@
     <script src="js/navbar.js"></script>
     <!-- <script src="js/menu.js"></script> -->
     <script>
-        var currentPage = 6; 
+        var currentPage = 9; 
         var totalPages = 11;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
-
         function updatePageNavButtons() {
             if (currentPage <= 1) {
                 prevPageBtn.disabled = true;
@@ -186,21 +167,17 @@
                 nextPageBtn.disabled = false;
             }
         }
-
         updatePageNavButtons();
-
         prevPageBtn.addEventListener('click', function() {
             if (currentPage > 1) {
                 window.location.href = 'page' + (currentPage - 1) + '.html';
             }
         });
-
         nextPageBtn.addEventListener('click', function() {
             if (currentPage < totalPages) {
                 window.location.href = 'page' + (currentPage + 1) + '.html';
             }
         });
-
         document.addEventListener('keydown', function(event) {
             if (event.key === 'ArrowLeft') {
                 if (currentPage > 1) {
@@ -214,77 +191,4 @@
         }); 
     </script>
 </body>
-
-<style>
-    .example-container {
-        display: inline-block;
-        width: 100%;
-        /* max-width: 1200px; */
-        position: relative;
-    }
-    
-    .orange-circle {
-        background-color: #F26522;
-        border-radius: 0 0 100% 0;
-        /* padding: 20px; */
-        width: 400px;
-        height: 350px;
-        display: flex;
-        align-items: flex-start;
-    }
-    
-    .orange-circle h2 {
-        color: white;
-        font-size: 52pt;
-        margin-top: 20pt;
-        margin-left: 20pt;
-    }
-    
-    .content {
-        margin-top: -200px;
-        padding-right: 40px;
-        margin-left: 400px;
-    }
-    
-    .benefit-box {
-        border-radius: 10px;
-        padding: 15px 20px;
-        margin-bottom: 20px;
-    }
-    
-    .benefit-box h3 {
-        color: white;
-        font-size: 38pt;
-        margin: 0;
-    }
-    
-    .benefit-box p {
-        color: antiquewhite;
-        font-size: 28pt;
-        margin: 10px 0 0 0;
-    }
-    
-    .purple {
-        background-color: #8E44AD;
-    }
-    
-    .blue {
-        background-color: #2980B9;
-    }
-    
-    .green {
-        background-color: #27AE60;
-    }
-    
-    .benefit-box p {
-        position: relative;
-        padding-left: 20px;
-    }
-    
-    .benefit-box p:before {
-        content: "•";
-        position: absolute;
-        left: 0;
-    }
-</style>
 </html>

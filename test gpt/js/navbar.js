@@ -1,16 +1,17 @@
 // 你的menuData與dropdown初始化程式碼可以寫在這裡
 const menuData = {
     hardware: [
-        { text: 'Topology', link: 'page4.html', icon: 'fa-solid fa-arrows-to-circle' },
-        { text: 'Hardware', link: 'page5.html', icon: 'fas fa-tools' },
+        { text: 'Topology', link: 'page7.html', icon: 'fa-solid fa-arrows-to-circle' },
+        { text: 'Hardware', link: 'page8.html', icon: 'fas fa-tools' },
         // { text: 'Software', link: 'page5.html', icon: 'fas fa-laptop-code' },
         { text: 'IP table（参考用）', link: 'iptable.html', icon: 'fa-solid fa-network-wired' }
-    ]
-    // hardware: [
-    //     { text: 'CPU', link: 'cpu.html', icon: 'fas fa-microchip' },
-    //     { text: 'Memory', link: 'memory.html', icon: 'fas fa-memory' },
-    //     { text: 'Storage', link: 'storage.html', icon: 'fas fa-hdd' }
-    // ],
+    ],
+    purpose: [
+        { text: 'Purpose', link: 'page3.html', icon: 'fas fa-microchip' },
+        { text: 'Issue', link: 'page4.html', icon: 'fa-solid fa-comments' },
+        { text: 'What', link: 'page5.html', icon: 'fa-solid fa-circle-question' },
+        { text: 'Example', link: 'page6.html', icon: 'fa-solid fa-file-lines' }
+    ],
     // software: [
     //     { text: 'IDE', link: 'ide.html', icon: 'fas fa-code' },
     //     { text: 'Dev Tools', link: 'devtools.html', icon: 'fas fa-tools' },

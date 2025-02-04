@@ -17,38 +17,76 @@
     <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
-        <div class="slider-container">
-            <div class="slide-wrapper" id="slideWrapper">
-                <div class="slide">
-                    <img src="images/result/slide/slide50.jpeg" alt="まとめ１" onclick="showOverlay('images/result/slide/slide50.jpeg')">
-                    <!-- <div class="description"><a href="まとめ１" target="_blank">まとめ１</a> -->
-                    <!-- </div> -->
-                </div>
-                <div class="slide">
-                    <img src="images/result/slide/slide51.jpeg" alt="まとめ２" onclick="showOverlay('images/result/slide/slide51.jpeg')">
-                    <!-- <div class="description"><a href="まとめ２" target="_blank">まとめ２</a> -->
-                    <!-- </div> -->
-                </div>
-            </div>
-            <div class="prev" onclick="prevSlide()">&lt;</div>
-            <div class="next" onclick="nextSlide()">&gt;</div>
+        <h1>使用ハードウェア一覧</h1>
+        <!-- 表格 -->
+        <div class="spec-table">
+        <table>
+            <tr>
+                <th>環境</th>
+                <th>ネットワーク設備</th>
+                <th>サーバーspec</th>
+            </tr>
+            <tr>
+                <td><a href="murai_spec.html">村井宅ラボ<i class="fa-solid fa-images"></i></a></td>
+                <td>
+                    <ul>
+                        <li>Vyos</li>
+                        <li>Allied-Telesis SH510-28GTX</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>HPE ProLiant DL360 Gen9</li>
+                        <li>Xeon E5-2690v4 *2</li>
+                        <li>DDR4 2400T ECC 8GB *8</li>
+                        <li>SSD 512GB (RAID1)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="kiriyama_spec.html">桐山宅ラボ<i class="fa-solid fa-images"></i></a></td>
+                <td>
+                    <ul>
+                        <li>YAMAHA RTX3500</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>HPE Proliant ML350 Gen9</li>
+                        <li>Xeon E5-2680v4 *2</li>
+                        <li>DDR4 2133 ECC 8GB *8</li>
+                        <li>SSD 2TB</li>
+                        <li>HDD 900GB RAID1</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="li_spec.html">李宅ラボ<i class="fa-solid fa-images"></i></a></td>
+                <td>
+                    <ul>
+                        <li>Raspberry Pi 5</li>
+                        <li>OpenWRT</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>HPI Pavillion</li>
+                        <li>Core i7-8750H</li>
+                        <li>DDR4 2400 16GB x2</li>
+                        <li>SSD 2TB</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
         </div>
     </div>
 
-        <!-- text Overlay -->
-        <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
-            <div class="text-content">
-                <button class="close-button" onclick="hideTextOverlay(event)">×</button>
-                <p id="textOverlayContent"></p>
-            </div>
-        </div>
-        <!-- 放大圖片 Overlay -->
-        <div class="overlay" id="overlay" onclick="hideOverlay(event)">
-        <!-- 增加關閉按鈕 -->
-            <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
-            <img id="overlayImage" src="" alt="放大圖片">
-        </div>
-
+    <!-- 放大圖片 Overlay -->
+    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
+    <!-- 增加關閉按鈕 -->
+        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
+        <img id="overlayImage" src="" alt="放大圖片">
+    </div>
 
 <!-- Footer: 上/下一頁按鈕 -->
     <footer class="footer">
@@ -64,8 +102,8 @@
     <script src="js/navbar.js"></script>
     <!-- <script src="js/menu.js"></script> -->
     <script>
-        var currentPage = 7; 
-        var totalPages = 8;
+        var currentPage = 8; 
+        var totalPages = 11;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
 
@@ -111,4 +149,3 @@
     </script>
 </body>
 </html>
-
