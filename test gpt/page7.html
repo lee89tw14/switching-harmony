@@ -17,22 +17,17 @@
     <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
-        <h1>展開サービス</h1>
+        <h1>トポロジー</h1>
+        <!-- 圖片 Slider -->
         <div class="slider-container">
             <div class="slide-wrapper" id="slideWrapper">
                 <div class="slide">
-                    <img src="images/result/Web.png" alt="Webサービス" onclick="showOverlay('images/result/Web.png')">
-                    <div class="description"><a href="https://www.tokyo-skills.jp" target="_blank">Webサービス</a>
-                    </div>
+                    <img src="images/topology.png" alt="Proxmox VE" onclick="showOverlay('images/topology.png')">
+                    <!-- <div class="description" onclick="showTextOverlay('実機にProxmox VEのインストールを行う')">Proxmox VE</div> -->
                 </div>
                 <div class="slide">
-                    <img src="images/result/minecraft_stresstest.jpeg" alt="Minecraft Server" onclick="showOverlay('images/result/minecraft_stresstest.jpeg')">
-                    <div class="description" onclick="showTextOverlay('mctest.tokyo-skills.jp \n Ver.1.21.4')">Minecraft サーバ</div>
-                </div>
-                <div class="slide">
-                    <img src="images/result/ops.png" alt="Minecraft Server" onclick="showOverlay('images/result/ops.png')">
-                    <div class="description"><a href="https://ops.tokyo-skills.jp" target="_blank">K8S運用状況監視</a>
-                    </div>
+                    <img src="images/installation/slide_powerpoint/slide49.jpeg" alt="slide40" onclick="showOverlay('images/installation/slide_powerpoint/slide49.jpeg')">
+                    <!-- <div class="description" >IaC</div> -->
                 </div>
             </div>
             <div class="prev" onclick="prevSlide()">&lt;</div>
@@ -40,20 +35,19 @@
         </div>
     </div>
 
-        <!-- text Overlay -->
-        <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
-            <div class="text-content">
-                <button class="close-button" onclick="hideTextOverlay(event)">×</button>
-                <p id="textOverlayContent"></p>
-            </div>
+    <!-- text Overlay -->
+    <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
+        <div class="text-content">
+            <button class="close-button" onclick="hideTextOverlay(event)">×</button>
+            <p id="textOverlayContent"></p>
         </div>
-        <!-- 放大圖片 Overlay -->
-        <div class="overlay" id="overlay" onclick="hideOverlay(event)">
-        <!-- 增加關閉按鈕 -->
-            <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
-            <img id="overlayImage" src="" alt="放大圖片">
-        </div>
-
+    </div>
+    <!-- 放大圖片 Overlay -->
+    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
+    <!-- 增加關閉按鈕 -->
+        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
+        <img id="overlayImage" src="" alt="放大圖片">
+    </div>
 
 <!-- Footer: 上/下一頁按鈕 -->
     <footer class="footer">
@@ -70,10 +64,9 @@
     <!-- <script src="js/menu.js"></script> -->
     <script>
         var currentPage = 7; 
-        var totalPages = 8;
+        var totalPages = 11;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
-
         function updatePageNavButtons() {
             if (currentPage <= 1) {
                 prevPageBtn.disabled = true;
@@ -87,21 +80,17 @@
                 nextPageBtn.disabled = false;
             }
         }
-
         updatePageNavButtons();
-
         prevPageBtn.addEventListener('click', function() {
             if (currentPage > 1) {
                 window.location.href = 'page' + (currentPage - 1) + '.html';
             }
         });
-
         nextPageBtn.addEventListener('click', function() {
             if (currentPage < totalPages) {
                 window.location.href = 'page' + (currentPage + 1) + '.html';
             }
         });
-
         document.addEventListener('keydown', function(event) {
             if (event.key === 'ArrowLeft') {
                 if (currentPage > 1) {

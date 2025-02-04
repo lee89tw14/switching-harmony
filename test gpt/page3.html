@@ -18,27 +18,21 @@
 
     <div class="wrapper">
         <!-- 替換區塊開始: 使用文字區域替換圖片展示區 -->
-        <div class="slider-container">
-            <div class="slide-wrapper" id="slideWrapper">
-                <div class="slide">
-                    <img src="images/purpose/happyou/Slide19.jpg" alt="Slide19" onclick="showOverlay('images/purpose/happyou/Slide19.jpg')">
-                </div>
-                <div class="slide">
-                    <img src="images/purpose/happyou/Slide2.jpg" alt="Slide2" onclick="showOverlay('images/purpose/happyou/Slide2.jpg')">
-                </div>
-                <div class="slide">
-                    <img src="images/purpose/happyou/Slide3.jpg" alt="Slide3" onclick="showOverlay('images/purpose/happyou/Slide3.jpg')">
-                </div>
-                <div class="slide">
-                    <img src="images/purpose/happyou/purpose4.png" alt="Slide4" onclick="showOverlay('images/purpose/happyou/Slide4.jpg')">
-                </div>
-            </div>
-            <div class="prev" onclick="prevSlide()">&lt;</div>
-            <div class="next" onclick="nextSlide()">&gt;</div>
+        <div class="purpose-container">
+            <h2 class="purpose-title">制作の目的</h2>
+            
+            <ul class="purpose-list">
+                <li>インフラストラクチャー・アズ・コード(IaC)能力の検証</li>
+                
+                <li>異なるネットワーク構成および複数拠点におけるProxmox VEクラスターの実現可能性の評価</li>
+                
+                <li>VXLANを用いたVMのデプロイとKubernetesクラスターの構築、高可用性能力の検証</li>
+                
+                <li>様々なネットワーク構成上へのクラスター構築におけるサービス信頼性の向上</li>
+            </ul>
         </div>
-
-
     </div>
+    
     <div class="overlay" id="overlay" onclick="hideOverlay(event)">
         <!-- 增加關閉按鈕 -->
             <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
@@ -61,7 +55,7 @@
     <!-- <script src="js/menu.js"></script> -->
     <script>
         var currentPage = 3; 
-        var totalPages = 8;
+        var totalPages = 11;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
 
@@ -106,4 +100,37 @@
         }); 
     </script>
 </body>
+
+<style>
+    .purpose-container {
+        padding: 20px;
+        margin: 20px;
+        font-size: 28pt;
+    }
+    
+    .purpose-title {
+        font-size: 54pt;
+        margin-bottom: 20px;
+        border-left: 3px solid #0088cc;
+        padding-left: 10px;
+    }
+    
+    .purpose-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .purpose-list li {
+        margin-bottom: 15px;
+        padding-left: 20px;
+        position: relative;
+    }
+    
+    .purpose-list li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #0088cc;
+    }
+</style>
 </html>

@@ -17,40 +17,42 @@
     <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
-        <!-- 替換區塊開始: 使用文字區域替換圖片展示區 -->
-        <div class="example-container">
-            <div class="example-header">
-                <div class="orange-circle">
-                    <h2><br/>具体例</h2>
+        <h1>展開サービス</h1>
+        <div class="slider-container">
+            <div class="slide-wrapper" id="slideWrapper">
+                <div class="slide">
+                    <img src="images/result/Web.png" alt="Webサービス" onclick="showOverlay('images/result/Web.png')">
+                    <div class="description"><a href="https://www.tokyo-skills.jp" target="_blank">Webサービス</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/result/minecraft_stresstest.jpeg" alt="Minecraft Server" onclick="showOverlay('images/result/minecraft_stresstest.jpeg')">
+                    <div class="description" onclick="showTextOverlay('mctest.tokyo-skills.jp \n Ver.1.21.4')">Minecraft サーバ</div>
+                </div>
+                <div class="slide">
+                    <img src="images/result/ops.png" alt="Minecraft Server" onclick="showOverlay('images/result/ops.png')">
+                    <div class="description"><a href="https://ops.tokyo-skills.jp" target="_blank">K8S運用状況監視</a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="content">
-                <div class="benefit-box purple">
-                    <h3>IaCによる効率化</h3>
-                    <p>稼働するサービスが大量の仮想マシン、設定を必要とする場合、作業コストの大幅な軽減</p>
-                </div>
-        
-                <div class="benefit-box blue">
-                    <h3>クラウドと同等の堅牢さ</h3>
-                    <p>重要なサービスを稼働させる事が可能に</p>
-                </div>
-        
-                <div class="benefit-box green">
-                    <h3>高可用性の確保</h3>
-                    <p>リソースの効率的な活用や、サービスの拡張が容易に</p>
-                </div>
+            <div class="prev" onclick="prevSlide()">&lt;</div>
+            <div class="next" onclick="nextSlide()">&gt;</div>
+        </div>
+    </div>
+
+        <!-- text Overlay -->
+        <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
+            <div class="text-content">
+                <button class="close-button" onclick="hideTextOverlay(event)">×</button>
+                <p id="textOverlayContent"></p>
             </div>
         </div>
-
-
-
-    </div>
-    <div class="overlay" id="overlay" onclick="hideOverlay(event)">
+        <!-- 放大圖片 Overlay -->
+        <div class="overlay" id="overlay" onclick="hideOverlay(event)">
         <!-- 增加關閉按鈕 -->
             <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
             <img id="overlayImage" src="" alt="放大圖片">
-    </div>
+        </div>
 
 
 <!-- Footer: 上/下一頁按鈕 -->
@@ -67,7 +69,7 @@
     <script src="js/navbar.js"></script>
     <!-- <script src="js/menu.js"></script> -->
     <script>
-        var currentPage = 6; 
+        var currentPage = 10; 
         var totalPages = 11;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
@@ -113,77 +115,4 @@
         }); 
     </script>
 </body>
-
-<style>
-    .example-container {
-        display: inline-block;
-        width: 100%;
-        /* max-width: 1200px; */
-        position: relative;
-    }
-    
-    .orange-circle {
-        background-color: #F26522;
-        border-radius: 0 0 100% 0;
-        /* padding: 20px; */
-        width: 400px;
-        height: 350px;
-        display: flex;
-        align-items: flex-start;
-    }
-    
-    .orange-circle h2 {
-        color: white;
-        font-size: 52pt;
-        margin-top: 20pt;
-        margin-left: 20pt;
-    }
-    
-    .content {
-        margin-top: -200px;
-        padding-right: 40px;
-        margin-left: 400px;
-    }
-    
-    .benefit-box {
-        border-radius: 10px;
-        padding: 15px 20px;
-        margin-bottom: 20px;
-    }
-    
-    .benefit-box h3 {
-        color: white;
-        font-size: 38pt;
-        margin: 0;
-    }
-    
-    .benefit-box p {
-        color: antiquewhite;
-        font-size: 28pt;
-        margin: 10px 0 0 0;
-    }
-    
-    .purple {
-        background-color: #8E44AD;
-    }
-    
-    .blue {
-        background-color: #2980B9;
-    }
-    
-    .green {
-        background-color: #27AE60;
-    }
-    
-    .benefit-box p {
-        position: relative;
-        padding-left: 20px;
-    }
-    
-    .benefit-box p:before {
-        content: "•";
-        position: absolute;
-        left: 0;
-    }
-</style>
 </html>

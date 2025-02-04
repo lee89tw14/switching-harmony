@@ -17,37 +17,36 @@
     <header class="header" id="navbar-container"></header>
 
     <div class="wrapper">
-        <h1>トポロジー</h1>
-        <!-- 圖片 Slider -->
-        <div class="slider-container">
-            <div class="slide-wrapper" id="slideWrapper">
-                <div class="slide">
-                    <img src="images/topology.png" alt="Proxmox VE" onclick="showOverlay('images/topology.png')">
-                    <!-- <div class="description" onclick="showTextOverlay('実機にProxmox VEのインストールを行う')">Proxmox VE</div> -->
-                </div>
-                <div class="slide">
-                    <img src="images/installation/slide_powerpoint/slide49.jpeg" alt="slide40" onclick="showOverlay('images/installation/slide_powerpoint/slide49.jpeg')">
-                    <!-- <div class="description" >IaC</div> -->
+        <!-- 替換區塊開始: 使用文字區域替換圖片展示區 -->
+        <div class="problem-container">
+            <div class="problem-header">
+                <div class="orange-circle">
+                    <h2>問 題<br/>提 起</h2>
                 </div>
             </div>
-            <div class="prev" onclick="prevSlide()">&lt;</div>
-            <div class="next" onclick="nextSlide()">&gt;</div>
+            
+            <div class="content">
+                <p class="trend-text">
+                    OSに依存しない特性から、昨今は仮想化がトレンド
+                </p>
+                
+                <div class="arrow-container">
+                    <div class="arrow-down"></div>
+                </div>
+                
+                <p class="issue-text">
+                    大量のVM、コンテナの作成や管理は煩雑でコストが高くなる傾向
+                </p>
+            </div>
         </div>
     </div>
 
-    <!-- text Overlay -->
-    <div id="textOverlay" class="text-overlay" onclick="hideTextOverlay(event)">
-        <div class="text-content">
-            <button class="close-button" onclick="hideTextOverlay(event)">×</button>
-            <p id="textOverlayContent"></p>
-        </div>
-    </div>
-    <!-- 放大圖片 Overlay -->
     <div class="overlay" id="overlay" onclick="hideOverlay(event)">
-    <!-- 增加關閉按鈕 -->
-        <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
-        <img id="overlayImage" src="" alt="放大圖片">
+        <!-- 增加關閉按鈕 -->
+            <button id="closeOverlayBtn" class="close-button" onclick="hideOverlayButton(event)">×</button>
+            <img id="overlayImage" src="" alt="放大圖片">
     </div>
+
 
 <!-- Footer: 上/下一頁按鈕 -->
     <footer class="footer">
@@ -64,9 +63,10 @@
     <!-- <script src="js/menu.js"></script> -->
     <script>
         var currentPage = 4; 
-        var totalPages = 8;
+        var totalPages =11;
         var prevPageBtn = document.getElementById('prevPageBtn');
         var nextPageBtn = document.getElementById('nextPageBtn');
+
         function updatePageNavButtons() {
             if (currentPage <= 1) {
                 prevPageBtn.disabled = true;
@@ -80,17 +80,21 @@
                 nextPageBtn.disabled = false;
             }
         }
+
         updatePageNavButtons();
+
         prevPageBtn.addEventListener('click', function() {
             if (currentPage > 1) {
                 window.location.href = 'page' + (currentPage - 1) + '.html';
             }
         });
+
         nextPageBtn.addEventListener('click', function() {
             if (currentPage < totalPages) {
                 window.location.href = 'page' + (currentPage + 1) + '.html';
             }
         });
+
         document.addEventListener('keydown', function(event) {
             if (event.key === 'ArrowLeft') {
                 if (currentPage > 1) {
@@ -104,4 +108,67 @@
         }); 
     </script>
 </body>
+
+<style>
+    .problem-container {
+        display: inline-block;
+        width: 100%;
+        /* max-width: 1200px; */
+        position: relative;
+    }
+    
+    .problem-header {
+        position: relative;
+    }
+    
+    .orange-circle {
+        background-color: #F26522;
+        border-radius: 0 0 85% 0;
+        padding: 20px;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .orange-circle h2 {
+        color: white;
+        font-size: 60pt;
+        margin-top: 10pt;
+        margin-left: 20pt;
+    }
+    
+    .content {
+        margin-top: -100px;
+        text-align: center;
+        /* padding-right: 40px; */
+    }
+    
+    .trend-text {
+        font-size: 30pt;
+        margin-bottom: 30px;
+        white-space: nowrap;
+    }
+    
+    .arrow-container {
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        margin: 40px 0;
+    }
+    
+    .arrow-down {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-top: 60px solid #2C5585;
+    }
+    
+    .issue-text {
+        color: #FF0000;
+        font-size: 28pt;
+        white-space: nowrap;
+    }
+</style>
 </html>
